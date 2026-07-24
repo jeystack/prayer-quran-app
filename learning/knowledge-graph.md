@@ -32,11 +32,11 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Concept | Status | Introduced | Last Reviewed | Evidence |
 |---|---|---|---|---|
 | What CSS is (styling/design) | introduced | 23 Jul 2026 | 24 Jul 2026 | Explained back: "Furniture, art, wall colors, and decoration." Refreshed: correctly contrasted CSS (styling/decoration) vs HTML (structure/fundament). |
-| Selectors (class, ID, element) | introduced | 24 Jul 2026 | — | Used `body` as an element selector in styles.css. Understood that a selector tells CSS which element to style. |
+| Selectors (class, ID, element) | practicing | 24 Jul 2026 | 24 Jul 2026 | Used `body` as element selector, `.checklist` as class selector, `#quran-reader` as ID selector. Correctly explained: `#` targets IDs, `.` targets classes. |
 | CSS rules (selector + declarations) | introduced | 24 Jul 2026 | — | Wrote my first CSS rule: `body { ... }`. Understood the structure: selector → curly braces → property: value. |
 | CSS properties (font-family, background-color, color, margin, padding) | introduced | 24 Jul 2026 | — | Used 5 properties to style the body. Predicted what each would change before seeing it. |
 | Box model (margin, padding, border) | introduced | 24 Jul 2026 | 24 Jul 2026 | Corrected own misconception: padding adds space on all four sides, not just one direction. Observed it live in the header styling. Haven't worked with margin or border as part of the box model yet. |
-| Flexbox layout | introduced | 24 Jul 2026 | 24 Jul 2026 | Used `display: flex`, `flex-direction: column`, `justify-content: space-between`, and `gap` to lay out prayer cards. Correctly predicted that removing `flex-direction: column` would make items go horizontal. |
+| Flexbox layout | practicing | 24 Jul 2026 | 24 Jul 2026 | Used `display: flex`, `flex-direction: column`, `justify-content: space-between`, and `gap` to lay out prayer cards. Correctly predicted that removing `flex-direction: column` would make items go horizontal. Reviewed: correctly recalled that `gap` spaces items in the container and `space-between` pushes children apart within a flex item. Distinguished between container-level and item-level flex behavior. |
 | Grid layout | seed | — | — | — |
 | Media queries (responsive breakpoints) | seed | — | — | — |
 | Typography (fonts, sizes, line height) | seed | — | — | — |
@@ -44,6 +44,8 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Mobile-first design thinking | seed | — | — | — |
 | border-radius (rounded corners) | practicing | 24 Jul 2026 | 24 Jul 2026 | Correctly answered that 50% on a square makes a circle (initially said rectangle, corrected after prompting). |
 | box-shadow (drop shadows) | practicing | 24 Jul 2026 | 24 Jul 2026 | Correctly predicted that changing alpha from 0.1 to 0.5 makes the shadow darker. |
+| margin-bottom | introduced | 24 Jul 2026 | — | Used on Qur'an `li` items to add space below each card. Understood it's like `gap` but works on non-flex containers — adds space below each element. |
+| list-style: none | introduced | 24 Jul 2026 | — | Used on `#quran-reader ul` to remove default browser bullets from the Surah list. |
 
 ## JavaScript
 
@@ -120,4 +122,4 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 ---
 
-*Last updated: 24 July 2026 — Task 3.3 done (prayer cards styled)*
+*Last updated: 24 July 2026 — Task 3.4 done (checklist and Qur'an reader styled)*

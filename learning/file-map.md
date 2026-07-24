@@ -39,4 +39,4 @@ Nothing in this repo should ever be a mystery box.
 
 ---
 
-*Last updated: 24 July 2026 — Task 3.3 done (prayer cards styled)*
+*Last updated: 24 July 2026 — Task 3.4 done (checklist and Qur'an reader styled)*
