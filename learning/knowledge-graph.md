@@ -50,6 +50,11 @@ Statuses only upgrade on evidence of something I actually said or did.
 | transform: translateY() | introduced | 24 Jul 2026 | — | Used `translateY(-2px)` to lift cards on hover. Understood it moves an element vertically — negative values go up, positive go down. |
 | CSS transitions (animating changes) | introduced | 24 Jul 2026 | — | Added `transition` to all three card types. Correctly predicted the effect would feel smoother than instant snapping. |
 | outline (focus indicator) | introduced | 24 Jul 2026 | — | Used `outline` with `outline-offset` on checkbox focus state. Understood it's different from border — outline doesn't affect layout. |
+| Nested selectors (header h1) | introduced | 25 Jul 2026 | — | Correctly explained difference between styling the container (header) vs the element inside (h1). Added `header h1` rule to style heading inside header. |
+| @import (loading external CSS/fonts) | introduced | 25 Jul 2026 | — | Added Google Fonts import for Inter. Understood it tells the browser to download a font from an external source before applying styles. |
+| max-width | introduced | 25 Jul 2026 | — | Added max-width to main and header to cap content width. Understood it limits how wide an element can grow. |
+| margin: 0 auto (centering) | introduced | 25 Jul 2026 | — | Used margin auto to center main and header horizontally. Understood auto left/right margin distributes space equally on both sides. |
+| Google Fonts (web font loading) | introduced | 25 Jul 2026 | — | Loaded Inter from Google Fonts via @import. Understood fonts must be either installed on the system or explicitly loaded — writing the name alone isn't enough. |
 
 ## JavaScript
 
@@ -126,4 +131,4 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 ---
 
-*Last updated: 24 July 2026 — Task 3.6 done (hover and focus states added)*
+*Last updated: 25 July 2026 — Section 3 complete (CSS styling done)*

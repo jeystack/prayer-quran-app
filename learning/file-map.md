@@ -37,6 +37,12 @@ Nothing in this repo should ever be a mystery box.
 | `app/js/` | Folder for JavaScript files. Empty — no scripts yet. | known | Created in Task 1.1. |
 | `app/data/` | Folder for Qur'an JSON data files. Empty — will be filled in Section 6. | parked | Created in Task 1.1. Data files come later. |
 
+## Root: Screenshots
+
+| Path | What it is | Status | Notes |
+|---|---|---|---|
+| `Prayer-Quran-App first look.png` | Screenshot of the app at the end of Section 3. | known | Shows the styled app — green header, prayer cards, checklist, Qur'an reader. |
+
 ---
 
-*Last updated: 24 July 2026 — Task 3.6 done (hover and focus states added)*
+*Last updated: 25 July 2026 — Section 3 complete (CSS styling done)*
