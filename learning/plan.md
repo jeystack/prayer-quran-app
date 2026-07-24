@@ -58,8 +58,8 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 - [x] **2.1** Add semantic HTML structure (header, main, section tags) to organize the page
 - [x] **2.2** Build the prayer times section with all 5 daily prayers
 - [x] **2.3** Build the daily prayer checklist with checkboxes
-- [ ] **2.4** Build the Qur'an reader section with a Surah list
-- [ ] **2.5** Review the complete page in the browser and verify all three areas show up
+- [x] **2.4** Build the Qur'an reader section with a Surah list
+- [x] **2.5** Review the complete page in the browser and verify all three areas show up
 
 ### Section 3: CSS Styling & Responsive Design
 **What you learn:** Selectors, box model, flexbox/grid, media queries, mobile-first design.
@@ -98,4 +98,4 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 
 ---
 
-*Last updated: 24 July 2026 — Task 2.3 done*
+*Last updated: 24 July 2026 — Task 2.5 done (Section 2 complete)*
