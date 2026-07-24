@@ -21,7 +21,7 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Divs and sections as containers | practicing | 24 Jul 2026 | — | Used divs with classes to group prayer items. Understood block vs inline behavior of divs vs spans. |
 | Class attributes (class="...") | practicing | 24 Jul 2026 | — | Used class on prayer-item divs. Correctly explained: classes let you style many elements with one CSS rule. |
 | Links and navigation (a, nav) | seed | — | — | — |
-| Forms and checkboxes (input, label) | seed | — | — | — |
+| Forms and checkboxes (input, label) | practicing | 24 Jul 2026 | — | Built the daily checklist with 5 checkbox items. Correctly explained that `for` on the label matches the `id` on the input so clicking the text toggles the box. |
 | Images and icons (img, svg) | seed | — | — | — |
 | Linking CSS to HTML (link tag) | introduced | 24 Jul 2026 | — | Correctly identified this is why the page looks plain. |
 | Linking JavaScript to HTML (script tag) | introduced | 24 Jul 2026 | — | Correctly identified this is missing (though not the main reason for plain look). |
@@ -115,4 +115,4 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 ---
 
-*Last updated: 24 July 2026 — Task 2.2 done*
+*Last updated: 24 July 2026 — Task 2.3 done*

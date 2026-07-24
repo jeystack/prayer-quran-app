@@ -31,11 +31,11 @@ Nothing in this repo should ever be a mystery box.
 
 | Path | What it is | Status | Notes |
 |---|---|---|---|
-| `app/index.html` | The main HTML page — the entry point of the app. | known | I wrote this. Header, main, three sections. Prayer times section has all 5 prayers with class labels. Other two sections still have placeholders. |
+| `app/index.html` | The main HTML page — the entry point of the app. | known | I wrote this. Header, main, three sections. Prayer times section has all 5 prayers with class labels. Daily checklist now has 5 checkboxes with labels. Qur'an reader section still has a placeholder. |
 | `app/css/` | Folder for CSS files. Empty — no styles yet. | known | Created in Task 1.1. |
 | `app/js/` | Folder for JavaScript files. Empty — no scripts yet. | known | Created in Task 1.1. |
 | `app/data/` | Folder for Qur'an JSON data files. Empty — will be filled in Section 6. | parked | Created in Task 1.1. Data files come later. |
 
 ---
 
-*Last updated: 24 July 2026 — Task 2.2 done*
+*Last updated: 24 July 2026 — Task 2.3 done*
