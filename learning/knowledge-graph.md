@@ -38,10 +38,10 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Box model (margin, padding, border) | introduced | 24 Jul 2026 | 24 Jul 2026 | Corrected own misconception: padding adds space on all four sides, not just one direction. Observed it live in the header styling. Haven't worked with margin or border as part of the box model yet. |
 | Flexbox layout | practicing | 24 Jul 2026 | 24 Jul 2026 | Used `display: flex`, `flex-direction: column`, `justify-content: space-between`, and `gap` to lay out prayer cards. Correctly predicted that removing `flex-direction: column` would make items go horizontal. Reviewed: correctly recalled that `gap` spaces items in the container and `space-between` pushes children apart within a flex item. Distinguished between container-level and item-level flex behavior. |
 | Grid layout | seed | — | — | — |
-| Media queries (responsive breakpoints) | seed | — | — | — |
+| Media queries (responsive breakpoints) | practicing | 24 Jul 2026 | 24 Jul 2026 | Correctly explained max-width vs min-width. Correctly predicted that padding would shrink on phones. Wrote the media query with all correct rules. |
 | Typography (fonts, sizes, line height) | seed | — | — | — |
 | Colors and theming | seed | — | — | — |
-| Mobile-first design thinking | seed | — | — | — |
+| Mobile-first design thinking | introduced | 24 Jul 2026 | — | Discussed the concept. Used max-width (desktop-first approach) today; mobile-first uses min-width instead. |
 | border-radius (rounded corners) | practicing | 24 Jul 2026 | 24 Jul 2026 | Correctly answered that 50% on a square makes a circle (initially said rectangle, corrected after prompting). |
 | box-shadow (drop shadows) | practicing | 24 Jul 2026 | 24 Jul 2026 | Correctly predicted that changing alpha from 0.1 to 0.5 makes the shadow darker. |
 | margin-bottom | introduced | 24 Jul 2026 | — | Used on Qur'an `li` items to add space below each card. Understood it's like `gap` but works on non-flex containers — adds space below each element. |
