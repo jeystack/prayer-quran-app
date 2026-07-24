@@ -16,9 +16,9 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Concept | Status | Introduced | Last Reviewed | Evidence |
 |---|---|---|---|---|
 | What HTML is (structure of a page) | introduced | 23 Jul 2026 | — | Explained back: "HTML is the fundament, walls, stairs, and doors." |
-| Semantic HTML (header, main, section, nav) | seed | — | — | — |
+| Semantic HTML (header, main, section, nav) | practicing | 24 Jul 2026 | — | Added header, main, and three section tags to index.html. Understood that semantic tags give meaning to content, not visual style. |
 | Headings and text hierarchy (h1–h6, p) | introduced | 24 Jul 2026 | — | Used h1 and p tags in index.html. |
-| Divs and sections as containers | seed | — | — | — |
+| Divs and sections as containers | introduced | 24 Jul 2026 | — | Used section tags with IDs to organize three feature areas. |
 | Links and navigation (a, nav) | seed | — | — | — |
 | Forms and checkboxes (input, label) | seed | — | — | — |
 | Images and icons (img, svg) | seed | — | — | — |
@@ -29,7 +29,7 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 | Concept | Status | Introduced | Last Reviewed | Evidence |
 |---|---|---|---|---|
-| What CSS is (styling/design) | introduced | 23 Jul 2026 | — | Explained back: "Furniture, art, wall colors, and decoration." |
+| What CSS is (styling/design) | introduced | 23 Jul 2026 | 24 Jul 2026 | Explained back: "Furniture, art, wall colors, and decoration." Refreshed: correctly contrasted CSS (styling/decoration) vs HTML (structure/fundament). |
 | Selectors (class, ID, element) | seed | — | — | — |
 | Box model (margin, padding, border) | seed | — | — | — |
 | Flexbox layout | seed | — | — | — |

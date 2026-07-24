@@ -31,7 +31,7 @@ Nothing in this repo should ever be a mystery box.
 
 | Path | What it is | Status | Notes |
 |---|---|---|---|
-| `app/index.html` | The main HTML page — the entry point of the app. | known | I wrote this. It has a heading and a paragraph. |
+| `app/index.html` | The main HTML page — the entry point of the app. | known | I wrote this. It has header, main, and three section tags with placeholder content. |
 | `app/css/` | Folder for CSS files. Empty — no styles yet. | known | Created in Task 1.1. |
 | `app/js/` | Folder for JavaScript files. Empty — no scripts yet. | known | Created in Task 1.1. |
 | `app/data/` | Folder for Qur'an JSON data files. Empty — will be filled in Section 6. | parked | Created in Task 1.1. Data files come later. |
