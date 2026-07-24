@@ -47,8 +47,8 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 - [x] **1.1** Create the `app/` folder structure with subdirectories for css, js, and data
 - [x] **1.2** Write your first HTML file (`app/index.html`) with basic structure and a title
 - [x] **1.3** Initialize Git (`git init`) to start version control
-- [ ] **1.4** Make your first commit with a meaningful message
-- [ ] **1.5** Open the page in a browser and see it working
+- [x] **1.4** Make your first commit with a meaningful message
+- [x] **1.5** Open the page in a browser and see it working
 
 ### Section 2: HTML Structure
 **What you learn:** Semantic HTML, page layout with divs and sections, forms and checkboxes.
