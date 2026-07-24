@@ -17,8 +17,9 @@ Statuses only upgrade on evidence of something I actually said or did.
 |---|---|---|---|---|
 | What HTML is (structure of a page) | introduced | 23 Jul 2026 | — | Explained back: "HTML is the fundament, walls, stairs, and doors." |
 | Semantic HTML (header, main, section, nav) | practicing | 24 Jul 2026 | — | Added header, main, and three section tags to index.html. Understood that semantic tags give meaning to content, not visual style. |
-| Headings and text hierarchy (h1–h6, p) | introduced | 24 Jul 2026 | — | Used h1 and p tags in index.html. |
-| Divs and sections as containers | introduced | 24 Jul 2026 | — | Used section tags with IDs to organize three feature areas. |
+| Headings and text hierarchy (h1–h6, p) | practicing | 24 Jul 2026 | — | Used h1 and h2 in index.html. Wrote prayer times structure independently. |
+| Divs and sections as containers | practicing | 24 Jul 2026 | — | Used divs with classes to group prayer items. Understood block vs inline behavior of divs vs spans. |
+| Class attributes (class="...") | practicing | 24 Jul 2026 | — | Used class on prayer-item divs. Correctly explained: classes let you style many elements with one CSS rule. |
 | Links and navigation (a, nav) | seed | — | — | — |
 | Forms and checkboxes (input, label) | seed | — | — | — |
 | Images and icons (img, svg) | seed | — | — | — |
@@ -114,4 +115,4 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 ---
 
-*Last updated: 24 July 2026*
+*Last updated: 24 July 2026 — Task 2.2 done*

@@ -56,7 +56,7 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 **Deliverable:** An unstyled but complete page showing all three feature areas with real content (prayer names, Surah list, checkboxes).
 
 - [x] **2.1** Add semantic HTML structure (header, main, section tags) to organize the page
-- [ ] **2.2** Build the prayer times section with all 5 daily prayers
+- [x] **2.2** Build the prayer times section with all 5 daily prayers
 - [ ] **2.3** Build the daily prayer checklist with checkboxes
 - [ ] **2.4** Build the Qur'an reader section with a Surah list
 - [ ] **2.5** Review the complete page in the browser and verify all three areas show up
