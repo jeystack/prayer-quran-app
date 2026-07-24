@@ -43,9 +43,13 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Colors and theming | seed | — | — | — |
 | Mobile-first design thinking | introduced | 24 Jul 2026 | — | Discussed the concept. Used max-width (desktop-first approach) today; mobile-first uses min-width instead. |
 | border-radius (rounded corners) | practicing | 24 Jul 2026 | 24 Jul 2026 | Correctly answered that 50% on a square makes a circle (initially said rectangle, corrected after prompting). |
-| box-shadow (drop shadows) | practicing | 24 Jul 2026 | 24 Jul 2026 | Correctly predicted that changing alpha from 0.1 to 0.5 makes the shadow darker. |
-| margin-bottom | introduced | 24 Jul 2026 | — | Used on Qur'an `li` items to add space below each card. Understood it's like `gap` but works on non-flex containers — adds space below each element. |
-| list-style: none | introduced | 24 Jul 2026 | — | Used on `#quran-reader ul` to remove default browser bullets from the Surah list. |
+| box-shadow (drop shadows) | understood | 24 Jul 2026 | 24 Jul 2026 | Correctly predicted that changing alpha from 0.1 to 0.5 makes the shadow darker. Used in compound hover effect (shadow changes with translateY to simulate depth). |
+| margin-bottom | practicing | 24 Jul 2026 | — | Used on Qur'an `li` items to add space below each card. Understood it's like `gap` but works on non-flex containers — adds space below each element. |
+| list-style: none | practicing | 24 Jul 2026 | — | Used on `#quran-reader ul` to remove default browser bullets from the Surah list. |
+| CSS pseudo-classes (:hover, :focus-visible) | introduced | 24 Jul 2026 | — | Used `:hover` on prayer cards, checklist items, and Qur'an list items. Used `:focus-visible` on checkboxes. Understood that pseudo-classes are selectors that activate based on user interaction, not classes you add in HTML. |
+| transform: translateY() | introduced | 24 Jul 2026 | — | Used `translateY(-2px)` to lift cards on hover. Understood it moves an element vertically — negative values go up, positive go down. |
+| CSS transitions (animating changes) | introduced | 24 Jul 2026 | — | Added `transition` to all three card types. Correctly predicted the effect would feel smoother than instant snapping. |
+| outline (focus indicator) | introduced | 24 Jul 2026 | — | Used `outline` with `outline-offset` on checkbox focus state. Understood it's different from border — outline doesn't affect layout. |
 
 ## JavaScript
 
@@ -122,4 +126,4 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 ---
 
-*Last updated: 24 July 2026 — Task 3.4 done (checklist and Qur'an reader styled)*
+*Last updated: 24 July 2026 — Task 3.6 done (hover and focus states added)*

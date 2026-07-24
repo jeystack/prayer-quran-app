@@ -71,7 +71,7 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 - [x] **3.3** Style the prayer section — cards with shadows, rounded corners, icons
 - [x] **3.4** Style the checklist and Qur'an reader sections
 - [x] **3.5** Add responsive design with media queries (phone vs. desktop)
-- [ ] **3.6** Add hover and focus states for interactivity
+- [x] **3.6** Add hover and focus states for interactivity
 - [ ] **3.7** Final review and polish
 
 ### Section 4: JavaScript Basics & DOM Manipulation
@@ -106,4 +106,4 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 
 ---
 
-*Last updated: 24 July 2026 — Task 3.4 done (checklist and Qur'an reader styled)*
+*Last updated: 24 July 2026 — Task 3.6 done (hover and focus states added)*
