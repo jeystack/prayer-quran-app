@@ -36,12 +36,14 @@ Statuses only upgrade on evidence of something I actually said or did.
 | CSS rules (selector + declarations) | introduced | 24 Jul 2026 | — | Wrote my first CSS rule: `body { ... }`. Understood the structure: selector → curly braces → property: value. |
 | CSS properties (font-family, background-color, color, margin, padding) | introduced | 24 Jul 2026 | — | Used 5 properties to style the body. Predicted what each would change before seeing it. |
 | Box model (margin, padding, border) | introduced | 24 Jul 2026 | 24 Jul 2026 | Corrected own misconception: padding adds space on all four sides, not just one direction. Observed it live in the header styling. Haven't worked with margin or border as part of the box model yet. |
-| Flexbox layout | seed | — | — | — |
+| Flexbox layout | introduced | 24 Jul 2026 | 24 Jul 2026 | Used `display: flex`, `flex-direction: column`, `justify-content: space-between`, and `gap` to lay out prayer cards. Correctly predicted that removing `flex-direction: column` would make items go horizontal. |
 | Grid layout | seed | — | — | — |
 | Media queries (responsive breakpoints) | seed | — | — | — |
 | Typography (fonts, sizes, line height) | seed | — | — | — |
 | Colors and theming | seed | — | — | — |
 | Mobile-first design thinking | seed | — | — | — |
+| border-radius (rounded corners) | practicing | 24 Jul 2026 | 24 Jul 2026 | Correctly answered that 50% on a square makes a circle (initially said rectangle, corrected after prompting). |
+| box-shadow (drop shadows) | practicing | 24 Jul 2026 | 24 Jul 2026 | Correctly predicted that changing alpha from 0.1 to 0.5 makes the shadow darker. |
 
 ## JavaScript
 
@@ -118,4 +120,4 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 ---
 
-*Last updated: 24 July 2026 — Task 3.2 done (header styled)*
+*Last updated: 24 July 2026 — Task 3.3 done (prayer cards styled)*
