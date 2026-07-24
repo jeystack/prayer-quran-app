@@ -66,6 +66,14 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 **What you do:** Style the entire app — colors, spacing, typography, layout that works on phones and desktop.
 **Deliverable:** The app looks like a real app on your phone. Clean, calm, readable.
 
+- [x] **3.1** Create the first CSS file (`app/css/styles.css`), link it to HTML, and write basic body styles (font, colors, spacing)
+- [ ] **3.2** Style the header — background color, text color, padding
+- [ ] **3.3** Style the prayer section — cards with shadows, rounded corners, icons
+- [ ] **3.4** Style the checklist and Qur'an reader sections
+- [ ] **3.5** Add responsive design with media queries (phone vs. desktop)
+- [ ] **3.6** Add hover and focus states for interactivity
+- [ ] **3.7** Final review and polish
+
 ### Section 4: JavaScript Basics & DOM Manipulation
 **What you learn:** What the DOM is, selecting elements, changing content, event listeners.
 **What you do:** Make buttons toggle, checkboxes trigger visible changes, taps on Surahs do something. The app comes alive.
@@ -98,4 +106,4 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 
 ---
 
-*Last updated: 24 July 2026 — Task 2.5 done (Section 2 complete)*
+*Last updated: 24 July 2026 — Task 3.1 done (Section 3 started)*

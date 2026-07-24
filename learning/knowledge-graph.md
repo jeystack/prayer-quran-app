@@ -15,7 +15,7 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 | Concept | Status | Introduced | Last Reviewed | Evidence |
 |---|---|---|---|---|
-| What HTML is (structure of a page) | introduced | 23 Jul 2026 | — | Explained back: "HTML is the fundament, walls, stairs, and doors." |
+| What HTML is (structure of a page) | understood | 23 Jul 2026 | 24 Jul 2026 | Explained back: "HTML is the fundament, walls, stairs, and doors." Refreshed: correctly identified as markup language (structure), not programming language (logic) and not styling (CSS). |
 | Semantic HTML (header, main, section, nav) | practicing | 24 Jul 2026 | — | Added header, main, and three section tags to index.html. Understood that semantic tags give meaning to content, not visual style. |
 | Headings and text hierarchy (h1–h6, p) | practicing | 24 Jul 2026 | — | Used h1 and h2 in index.html. Wrote prayer times structure independently. |
 | Divs and sections as containers | practicing | 24 Jul 2026 | — | Used divs with classes to group prayer items. Understood block vs inline behavior of divs vs spans. |
@@ -24,7 +24,7 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Forms and checkboxes (input, label) | practicing | 24 Jul 2026 | 24 Jul 2026 | Built the daily checklist with 5 checkbox items. Correctly explained that `for` on the label matches the `id` on the input so clicking the text toggles the box. Reviewed: correctly recalled what `for`/`id` matching does and what breaks when they don't match. |
 | Unordered lists (ul, li) | practicing | 24 Jul 2026 | — | Built the Surah list with 5 `<li>` items inside a `<ul>`. Correctly predicted the list would appear with default browser styling (plain bullets, no custom colors). |
 | Images and icons (img, svg) | seed | — | — | — |
-| Linking CSS to HTML (link tag) | introduced | 24 Jul 2026 | — | Correctly identified this is why the page looks plain. |
+| Linking CSS to HTML (link tag) | practicing | 24 Jul 2026 | 24 Jul 2026 | Correctly identified this is why the page looks plain. Added the `<link>` tag to index.html myself. |
 | Linking JavaScript to HTML (script tag) | introduced | 24 Jul 2026 | — | Correctly identified this is missing (though not the main reason for plain look). |
 
 ## CSS
@@ -32,7 +32,9 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Concept | Status | Introduced | Last Reviewed | Evidence |
 |---|---|---|---|---|
 | What CSS is (styling/design) | introduced | 23 Jul 2026 | 24 Jul 2026 | Explained back: "Furniture, art, wall colors, and decoration." Refreshed: correctly contrasted CSS (styling/decoration) vs HTML (structure/fundament). |
-| Selectors (class, ID, element) | seed | — | — | — |
+| Selectors (class, ID, element) | introduced | 24 Jul 2026 | — | Used `body` as an element selector in styles.css. Understood that a selector tells CSS which element to style. |
+| CSS rules (selector + declarations) | introduced | 24 Jul 2026 | — | Wrote my first CSS rule: `body { ... }`. Understood the structure: selector → curly braces → property: value. |
+| CSS properties (font-family, background-color, color, margin, padding) | introduced | 24 Jul 2026 | — | Used 5 properties to style the body. Predicted what each would change before seeing it. |
 | Box model (margin, padding, border) | seed | — | — | — |
 | Flexbox layout | seed | — | — | — |
 | Grid layout | seed | — | — | — |
@@ -116,4 +118,4 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 ---
 
-*Last updated: 24 July 2026 — Task 2.5 done (Section 2 complete)*
+*Last updated: 24 July 2026 — Task 3.1 done (Section 3 started)*
