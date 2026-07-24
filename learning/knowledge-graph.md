@@ -35,7 +35,7 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Selectors (class, ID, element) | introduced | 24 Jul 2026 | — | Used `body` as an element selector in styles.css. Understood that a selector tells CSS which element to style. |
 | CSS rules (selector + declarations) | introduced | 24 Jul 2026 | — | Wrote my first CSS rule: `body { ... }`. Understood the structure: selector → curly braces → property: value. |
 | CSS properties (font-family, background-color, color, margin, padding) | introduced | 24 Jul 2026 | — | Used 5 properties to style the body. Predicted what each would change before seeing it. |
-| Box model (margin, padding, border) | seed | — | — | — |
+| Box model (margin, padding, border) | introduced | 24 Jul 2026 | 24 Jul 2026 | Corrected own misconception: padding adds space on all four sides, not just one direction. Observed it live in the header styling. Haven't worked with margin or border as part of the box model yet. |
 | Flexbox layout | seed | — | — | — |
 | Grid layout | seed | — | — | — |
 | Media queries (responsive breakpoints) | seed | — | — | — |
@@ -118,4 +118,4 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 ---
 
-*Last updated: 24 July 2026 — Task 3.1 done (Section 3 started)*
+*Last updated: 24 July 2026 — Task 3.2 done (header styled)*

@@ -33,10 +33,10 @@ Nothing in this repo should ever be a mystery box.
 |---|---|---|---|
 | `app/index.html` | The main HTML page — the entry point of the app. | known | I wrote this. Header, main, three sections. Prayer times section has all 5 prayers with class labels. Daily checklist has 5 checkboxes with labels. Qur'an reader has an unordered list with the first 5 Surahs. |
 | `app/css/` | Folder for CSS files. | known | Created in Task 1.1. |
-| `app/css/styles.css` | The main stylesheet — controls how the app looks. | known | I wrote this. First rules: body font, background color, text color, margin, padding. |
+| `app/css/styles.css` | The main stylesheet — controls how the app looks. | known | I wrote this. Two rules: body (font, background, text color, margin, padding) and header (green background, white text, padding). |
 | `app/js/` | Folder for JavaScript files. Empty — no scripts yet. | known | Created in Task 1.1. |
 | `app/data/` | Folder for Qur'an JSON data files. Empty — will be filled in Section 6. | parked | Created in Task 1.1. Data files come later. |
 
 ---
 
-*Last updated: 24 July 2026 — Task 2.5 done (Section 2 complete)*
+*Last updated: 24 July 2026 — Task 3.2 done (header styled)*

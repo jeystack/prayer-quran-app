@@ -67,7 +67,7 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 **Deliverable:** The app looks like a real app on your phone. Clean, calm, readable.
 
 - [x] **3.1** Create the first CSS file (`app/css/styles.css`), link it to HTML, and write basic body styles (font, colors, spacing)
-- [ ] **3.2** Style the header — background color, text color, padding
+- [x] **3.2** Style the header — background color, text color, padding
 - [ ] **3.3** Style the prayer section — cards with shadows, rounded corners, icons
 - [ ] **3.4** Style the checklist and Qur'an reader sections
 - [ ] **3.5** Add responsive design with media queries (phone vs. desktop)
@@ -106,4 +106,4 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 
 ---
 
-*Last updated: 24 July 2026 — Task 3.1 done (Section 3 started)*
+*Last updated: 24 July 2026 — Task 3.2 done (header styled)*
