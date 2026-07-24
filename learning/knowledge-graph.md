@@ -83,11 +83,12 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Concept | Status | Introduced | Last Reviewed | Evidence |
 |---|---|---|---|---|
 | What Git is (undo for code) | introduced | 23 Jul 2026 | — | Explained: "Unlimited undo for your entire project." |
-| What GitHub is (code in the cloud) | introduced | 23 Jul 2026 | — | Discussed during hosting decision. |
+| What GitHub is (code in the cloud) | practicing | 23 Jul 2026 | 24 Jul 2026 | Created repo on GitHub, pushed code, can see it at github.com/jeystack/prayer-quran-app. |
 | git init | practicing | 24 Jul 2026 | — | Ran git init, correctly predicted nothing visible happens. |
 | git add / git commit | practicing | 24 Jul 2026 | 24 Jul 2026 | Ran `git add` and `git commit` myself, understood green→grey means files are saved. |
 | Meaningful commit messages | practicing | 24 Jul 2026 | 24 Jul 2026 | Wrote my own commit message: "setup the foundation for this project and my learning journey." |
-| git push / git pull | seed | — | — | — |
+| git push / git pull | practicing | 24 Jul 2026 | 24 Jul 2026 | Pushed code to GitHub, diagnosed SSH issue, fixed it, and pushed successfully. |
+| SSH keys & authentication | introduced | 24 Jul 2026 | — | Discovered ssh-agent had no identities, ran ssh-add, confirmed connection with `ssh -T`. |
 | Branching | seed | — | — | — |
 
 ## PWA & Deployment
