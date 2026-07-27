@@ -47,3 +47,33 @@ updatePrayerCount();
 allCheckboxes.forEach(function (box) {
     box.addEventListener("change", updatePrayerCount);
 });
+
+// --- Task 4.4: Tap a prayer item and swap --:-- for a time ---
+
+// Step 1: Find all the prayer-time spans
+// querySelectorAll gives me a list of every element with class "prayer-time".
+const allPrayerTimes = document.querySelectorAll(".prayer-time");
+
+// Step 2: Add a click listener to each one
+// forEach runs the same code once per item in the list.
+allPrayerTimes.forEach(function (timeSpan) {
+    timeSpan.addEventListener("click", function (event) {
+        // The parent div holds both th name and the time
+        // event.target is whatever the user clicked on
+        const parentDiv = event.target.parentElement;
+        const prayerName = parentDiv.querySelector(".prayer-name").textContent;
+
+        // Decide what time to show based on which prayer was tapped
+        if (prayerName === "Fajr") {
+            timeSpan.textContent = "5:30 AM";
+        } else if (prayerName === "Dhuhr") {
+            timeSpan.textContent = "12:15 PM";
+        } else if (prayerName === "Asr") {
+            timeSpan.textContent = "3:45 PM";
+        } else if (prayerName === "Maghrib") {
+            timeSpan.textContent = "7:00 PM";
+        } else if (prayerName === "Isha") {
+            timeSpan.textContent = "9:00 PM";
+        }
+    });
+});

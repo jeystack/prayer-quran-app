@@ -64,12 +64,14 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Variables (let, const) | practicing | 25 Jul 2026 | — | Used `const` to store element references from querySelector. Understood const means "this name won't change." Also used `let` for a counter variable that changes inside a loop — understood `let` is for values that will be reassigned. |
 | Data types (string, number, boolean, object, array) | seed | — | — | — |
 | Functions (declaration, arrow) | introduced | 25 Jul 2026 | — | Used an anonymous function as a callback in addEventListener. Understood it's code that only runs when something happens. |
-| Conditional statements (if/else) | introduced | 25 Jul 2026 | — | Used if/else to check `fajrCheckbox.checked` and swap text. Correctly explained the flow: if true do X, otherwise do Y. |
-| Loops (for, forEach) | practicing | 27 Jul 2026 | — | Used `forEach` to loop through all checkboxes — count checked ones and add event listeners to each. Understood it runs the same code once per item in a list. |
+| Conditional statements (if/else) | practicing | 25 Jul 2026 | 27 Jul 2026 | Task 4.2: used `if/else` to check `fajrCheckbox.checked` and swap text. Task 4.4: used `if/else if` chain (5 branches) to map each prayer name to its own time — correctly predicted that each branch fires independently based on the prayer name. |
+| Loops (for, forEach) | practicing | 27 Jul 2026 | 27 Jul 2026 | Used `forEach` to loop through all checkboxes — count checked ones and add event listeners to each. Task 4.4: used `forEach` again to add click listeners to all prayer-time spans. Consistent pattern now: `querySelectorAll` → `forEach` → action per element. |
 | DOM (what it is, why it exists) | introduced | 25 Jul 2026 | — | Explained: "invisible tree the browser builds from HTML that JavaScript can reach into and change." |
 | Selecting elements (getElementById, querySelector) | practicing | 25 Jul 2026 | — | Used `document.querySelector("#check-fajr")` to find elements by id. Correctly identified that `#` in the selector means "find by id." Also used `querySelectorAll("input[type='checkbox']")` to select all checkboxes at once. |
 | Changing content (textContent, innerHTML) | practicing | 25 Jul 2026 | — | Used `.textContent` to swap the status message text on checkbox change and to update the prayer count display. Understood it replaces all text inside the element. |
-| Event listeners (click, change, input) | practicing | 25 Jul 2026 | — | Used `addEventListener("change", ...)` on the Fajr checkbox. Correctly understood it runs the function only when the checkbox is toggled, not on page load. |
+| Event listeners (click, change, input) | practicing | 25 Jul 2026 | 27 Jul 2026 | Used `addEventListener("change", ...)` on Fajr checkbox. Task 4.3: added change listeners to all checkboxes via forEach. Task 4.4: used `addEventListener("click", ...)` on all prayer-time spans via forEach — correctly distinguished between "change" (checkbox toggled) and "click" (any tap). |
+| event.target (which element was clicked) | introduced | 27 Jul 2026 | — | Used `event.target` inside a click handler to identify which prayer-time span was tapped. Correctly understood it refers to the specific element the user clicked on. |
+| parentElement (walking up the DOM tree) | introduced | 27 Jul 2026 | — | Used `event.target.parentElement` to go from the clicked time span up to the `.prayer-item` div, then `querySelector` back down to find the prayer name. Correctly understood the parent as the bridge between sibling elements. |
 | Array methods (map, filter, find) | seed | — | — | — |
 | String manipulation | seed | — | — | — |
 | Working with dates and times | seed | — | — | — |
@@ -131,4 +133,4 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 ---
 
-*Last updated: 27 July 2026 — Task 4.3 done (checkbox counter with forEach)*
+*Last updated: 27 July 2026 — Task 4.4 done (prayer time click handler with event.target and parentElement)*
