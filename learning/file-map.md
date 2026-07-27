@@ -36,7 +36,7 @@ Nothing in this repo should ever be a mystery box.
 | `app/css/` | Folder for CSS files. | known | Created in Task 1.1. |
 | `app/css/styles.css` | The main stylesheet — controls how the app looks. | known | I wrote this. Rules for body, header, all three card types (prayer, checklist, Qur'an), hover states with lift effect, focus-visible on checkboxes, transitions for smooth animation, and a media query for small screens. |
 | `app/js/` | Folder for JavaScript files. | known | Created in Task 1.1. |
-| `app/js/main.js` | The main JavaScript file — where all app logic lives. | known | Created in Task 4.1. Task 4.2: Fajr checkbox listener — querySelector, change event, if/else text swap. Task 4.3: count checked boxes with querySelectorAll and forEach, live update display. Task 4.4: prayer time click handlers — forEach with click listeners, event.target.parentElement to find sibling prayer name, if/else if chain to map each prayer to its own time. |
+| `app/js/main.js` | The main JavaScript file — where all app logic lives. | known | Created in Task 4.1. Task 4.2: Fajr checkbox listener — querySelector, change event, if/else text swap. Task 4.3: count checked boxes with querySelectorAll and forEach, live update display. Task 4.4: prayer time click handlers — forEach with click listeners, event.target.parentElement to find sibling prayer name, if/else if chain to map each prayer to its own time. Task 4.5: Surah list click handlers — querySelectorAll(".surah-item"), forEach, event.target.textContent, string concatenation to build "Reading: [name]". Simplified five if/else branches into one line. |
 | `app/data/` | Folder for Qur'an JSON data files. Empty — will be filled in Section 6. | parked | Created in Task 1.1. Data files come later. |
 
 ## Root: Screenshots
@@ -47,4 +47,4 @@ Nothing in this repo should ever be a mystery box.
 
 ---
 
-*Last updated: 27 July 2026 — Task 4.4 done (prayer time click handlers)*
+*Last updated: 27 July 2026 — Task 4.5 done (Surah list interactivity)*

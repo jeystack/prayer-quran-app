@@ -77,3 +77,24 @@ allPrayerTimes.forEach(function (timeSpan) {
         }
     });
 });
+
+// --- Task 4.5: Tap a Surah and see its name ---
+
+// Step 1: Find all the Surah list items
+// (use querySelectorAll with the class you just added)
+const allSurahItems = document.querySelectorAll(".surah-item");
+
+// Step 2: Find the intro text element
+// (it has class "quran-reader-intro" )
+const introText = document.querySelector(".quran-reader-intro");
+
+// Step 3: Loop through all surah items and add a click listener to each
+// When clicked:
+//  a) Get the Surah name from event.target.textContent
+//  b) Update the intro text to say "Reading: [Surah name]"
+allSurahItems.forEach(function (readSurah) {
+    readSurah.addEventListener("click", function (event) {
+        const surahName = event.target.textContent;
+        introText.textContent = "Reading: " + surahName;
+    });
+});

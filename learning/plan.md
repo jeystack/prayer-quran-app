@@ -83,7 +83,7 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 - [x] **4.2** Select a checklist checkbox and add a click listener — change a message when you check a box
 - [x] **4.3** Count how many checkboxes are checked — show "X of 5 prayers checked" at the top
 - [x] **4.4** Change prayer time text on click — tap a prayer item and swap `--:--` for something else
-- [ ] **4.5** Make Surah list items interactive — tap a Surah and see its name appear somewhere
+- [x] **4.5** Make Surah list items interactive — tap a Surah and see its name appear somewhere
 
 ### Section 5: Prayer Times with Adhan.js
 **What you learn:** How to use external JavaScript libraries, geolocation API, working with time data.
@@ -112,4 +112,4 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 
 ---
 
-*Last updated: 27 July 2026 — Task 4.4 done (prayer time click with event.target and parentElement)*
+*Last updated: 27 July 2026 — Task 4.5 done (Surah list interactivity)*
