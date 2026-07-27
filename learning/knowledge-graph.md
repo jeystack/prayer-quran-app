@@ -67,7 +67,7 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Conditional statements (if/else) | practicing | 25 Jul 2026 | 27 Jul 2026 | Task 4.2: used `if/else` to check `fajrCheckbox.checked` and swap text. Task 4.4: used `if/else if` chain (5 branches) to map each prayer name to its own time — correctly predicted that each branch fires independently based on the prayer name. |
 | Loops (for, forEach) | practicing | 27 Jul 2026 | 27 Jul 2026 | Used `forEach` to loop through all checkboxes — count checked ones and add event listeners to each. Task 4.4: used `forEach` again to add click listeners to all prayer-time spans. Task 4.5: same pattern on Surah list items. Consistent pattern now: `querySelectorAll` → `forEach` → action per element. |
 | DOM (what it is, why it exists) | introduced | 25 Jul 2026 | — | Explained: "invisible tree the browser builds from HTML that JavaScript can reach into and change." |
-| Selecting elements (getElementById, querySelector) | practicing | 25 Jul 2026 | 27 Jul 2026 | Task 4.5: independently used `querySelectorAll(".surah-item")` and `querySelector(".quran-reader-intro")` without guidance — pattern is becoming routine. |
+| Selecting elements (getElementById, querySelector) | practicing | 25 Jul 2026 | 27 Jul 2026 | Task 5.2 review: correctly explained that querySelectorAll returns multiple elements. Struggled to articulate that a NodeList doesn't have `.textContent` directly — confused it with the elements inside. Refresher given: querySelector → single element (has textContent), querySelectorAll → NodeList (needs forEach to access each element). |
 | Changing content (textContent, innerHTML) | practicing | 25 Jul 2026 | — | Used `.textContent` to swap the status message text on checkbox change and to update the prayer count display. Understood it replaces all text inside the element. |
 | Event listeners (click, change, input) | practicing | 25 Jul 2026 | 27 Jul 2026 | Used `addEventListener("change", ...)` on Fajr checkbox. Task 4.3: added change listeners to all checkboxes via forEach. Task 4.4: used `addEventListener("click", ...)` on all prayer-time spans via forEach — correctly distinguished between "change" (checkbox toggled) and "click" (any tap). |
 | event.target (which element was clicked) | introduced | 27 Jul 2026 | — | Used `event.target` inside a click handler to identify which prayer-time span was tapped. Correctly understood it refers to the specific element the user clicked on. |
@@ -75,8 +75,11 @@ Statuses only upgrade on evidence of something I actually said or did.
 | String concatenation (+) | practicing | 27 Jul 2026 | 27 Jul 2026 | Used `"Reading: " + surahName` to build a message from a variable. Simplified five if/else branches into one line by recognizing the pattern was the same each time. |
 | Array methods (map, filter, find) | seed | — | — | — |
 | String manipulation | seed | — | — | — |
-| Working with dates and times | seed | — | — | — |
+| Working with dates and times | introduced | 27 Jul 2026 | — | Used `new Date()` to pass today's date to Adhan.js. Understood it auto-updates each day. |
 | Fetch API (loading JSON files) | seed | — | — | — |
+| ES modules (type="module", import/export) | introduced | 27 Jul 2026 | — | Changed script tag to type="module" and used `import * as adhan from "url"` to load Adhan.js. Understood modules load after DOM is ready and can import from URLs. Distinguished from classic scripts which run immediately and can't use import. |
+| `new` keyword (creating objects from blueprints) | introduced | 27 Jul 2026 | — | Initially guessed "current", corrected to: `new` tells JavaScript to create a fresh object from a class/blueprint. Used `new adhan.Coordinates(...)`, `new Date()`, `new adhan.PrayerTimes(...)`. |
+| `new Date()` (getting today's date) | practicing | 27 Jul 2026 | — | Correctly explained: gives the current date whenever the script runs — changes automatically each day. |
 
 ## Data & Storage
 
@@ -95,8 +98,8 @@ Statuses only upgrade on evidence of something I actually said or did.
 |---|---|---|---|---|
 | What a library is (pre-built code you use) | introduced | 23 Jul 2026 | — | Explained during Adhan.js decision: "Pre-built door vs raw wood." |
 | What an API is (asking internet for data) | introduced | 23 Jul 2026 | — | Explained during design decisions. |
-| Using Adhan.js for prayer times | seed | — | — | — |
-| Reading library documentation | seed | — | — | — |
+| Using Adhan.js for prayer times | practicing | 27 Jul 2026 | 27 Jul 2026 | Task 5.2: successfully called `adhan.Coordinates()`, `adhan.CalculationMethod.MuslimWorldLeague()`, and `new adhan.PrayerTimes()` to calculate and display all 6 prayer times in the console. |
+| Reading library documentation | introduced | 27 Jul 2026 | — | Read Adhan.js API to find `Coordinates`, `CalculationMethod`, and `PrayerTimes` classes and their properties (fajr, sunrise, dhuhr, asr, maghrib, isha). |
 
 ## Git & Version Control
 
@@ -134,4 +137,4 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 ---
 
-*Last updated: 27 July 2026 — Task 4.5 done (Surah list interactivity with string concatenation)*
+*Last updated: 27 July 2026 — Task 5.2 done (prayer times calculated and displayed in console)*

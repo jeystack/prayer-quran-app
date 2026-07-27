@@ -1,4 +1,18 @@
 // console.log("JS is live and running!");
+import * as adhan from "https://esm.sh/adhan";
+
+// --- Task 5.2: Calculate prayer times with Adhan.js ---
+const coordinates = new adhan.Coordinates(51.74, 6.98);
+const date = new Date();
+const params = adhan.CalculationMethod.MuslimWorldLeague();
+const prayerTimes = new adhan.PrayerTimes(coordinates, date, params);
+
+console.log("Fajr:", prayerTimes.fajr);
+console.log("Sunrise:", prayerTimes.sunrise);
+console.log("Dhuhr:", prayerTimes.dhuhr);
+console.log("Asr:", prayerTimes.asr);
+console.log("Maghrib:", prayerTimes.maghrib);
+console.log("Isha:", prayerTimes.isha);
 
 // --- Task 4.2: Make the Fajr checkbox do something ---
 

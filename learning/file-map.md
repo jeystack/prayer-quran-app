@@ -32,11 +32,11 @@ Nothing in this repo should ever be a mystery box.
 
 | Path | What it is | Status | Notes |
 |---|---|---|---|
-| `app/index.html` | The main HTML page — the entry point of the app. | known | I wrote this. Header, main, three sections. Prayer times section has all 5 prayers with class labels. Daily checklist has 5 checkboxes with labels. Qur'an reader has an unordered list with the first 5 Surahs. |
+| `app/index.html` | The main HTML page — the entry point of the app. | known | I wrote this. Header, main, three sections. Prayer times section has all 5 prayers with class labels. Daily checklist has 5 checkboxes with labels. Qur'an reader has an unordered list with the first 5 Surahs. Section 5: changed script tag to type="module" to support ES module imports. |
 | `app/css/` | Folder for CSS files. | known | Created in Task 1.1. |
 | `app/css/styles.css` | The main stylesheet — controls how the app looks. | known | I wrote this. Rules for body, header, all three card types (prayer, checklist, Qur'an), hover states with lift effect, focus-visible on checkboxes, transitions for smooth animation, and a media query for small screens. |
 | `app/js/` | Folder for JavaScript files. | known | Created in Task 1.1. |
-| `app/js/main.js` | The main JavaScript file — where all app logic lives. | known | Created in Task 4.1. Task 4.2: Fajr checkbox listener — querySelector, change event, if/else text swap. Task 4.3: count checked boxes with querySelectorAll and forEach, live update display. Task 4.4: prayer time click handlers — forEach with click listeners, event.target.parentElement to find sibling prayer name, if/else if chain to map each prayer to its own time. Task 4.5: Surah list click handlers — querySelectorAll(".surah-item"), forEach, event.target.textContent, string concatenation to build "Reading: [name]". Simplified five if/else branches into one line. |
+| `app/js/main.js` | The main JavaScript file — where all app logic lives. | known | Created in Task 4.1. Task 4.2: Fajr checkbox listener — querySelector, change event, if/else text swap. Task 4.3: count checked boxes with querySelectorAll and forEach, live update display. Task 4.4: prayer time click handlers — forEach with click listeners, event.target.parentElement to find sibling prayer name, if/else if chain to map each prayer to its own time. Task 4.5: Surah list click handlers — querySelectorAll(".surah-item"), forEach, event.target.textContent, string concatenation to build "Reading: [name]". Simplified five if/else branches into one line. Task 5.2: imported Adhan.js, created Coordinates, Date, CalculationMethod params, calculated PrayerTimes, logged all 6 times to console. |
 | `app/data/` | Folder for Qur'an JSON data files. Empty — will be filled in Section 6. | parked | Created in Task 1.1. Data files come later. |
 
 ## Root: Screenshots
@@ -47,4 +47,4 @@ Nothing in this repo should ever be a mystery box.
 
 ---
 
-*Last updated: 27 July 2026 — Task 4.5 done (Surah list interactivity)*
+*Last updated: 27 July 2026 — Task 5.2 done (prayer times calculated and displayed in console)*
