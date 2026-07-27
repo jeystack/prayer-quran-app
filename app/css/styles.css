@@ -115,6 +115,22 @@ header h1 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Next prayer highlight - slow green pulse */
+@keyframes pulse-green {
+  0%,
+  100% {
+    background-color: #ffffff;
+  }
+  50% {
+    background-color: #d4edda;
+  }
+}
+
+.next-prayer {
+  animation: pulse-green 3s ease-in-out infinite;
+  border-left: 4px solid #2d6a4f;
+}
+
 @media (max-width: 600px) {
   body {
     padding: 10px;

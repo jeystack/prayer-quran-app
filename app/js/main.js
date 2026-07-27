@@ -25,13 +25,13 @@ const statusMessage = document.querySelector("#checklist-status");
 // Step 2: Listen for changes on the checkbox
 // When the checkbox is checked or unchecked, run the function below.
 fajrCheckbox.addEventListener("change", function () {
-    // Step 3: Check if the box is checked or not
-    // .checked is true when the box has a checkmark, false when it doesn't.
-    if (fajrCheckbox.checked) {
-        statusMessage.textContent = "Alhamdulillah - Fajr prayed!";
-    } else {
-        statusMessage.textContent = "Prayed today? Check it off.";
-    }
+  // Step 3: Check if the box is checked or not
+  // .checked is true when the box has a checkmark, false when it doesn't.
+  if (fajrCheckbox.checked) {
+    statusMessage.textContent = "Alhamdulillah - Fajr prayed!";
+  } else {
+    statusMessage.textContent = "Prayed today? Check it off.";
+  }
 });
 
 // --- Task 4.3: Count how many checkboxes are checked — show "X of 5 prayers checked" at the top ---
@@ -46,20 +46,20 @@ const prayerCountDisplay = document.querySelector("#prayer-count");
 // Step 3: Write a function that counts and displays
 // forEach runs the same code once for each item in a list.
 function updatePrayerCount() {
-    let count = 0;
-    allCheckboxes.forEach(function (box) {
-        if (box.checked) {
-            count = count + 1;
-        }
-    });
-    prayerCountDisplay.textContent = count + " of 5 prayers checked";
+  let count = 0;
+  allCheckboxes.forEach(function (box) {
+    if (box.checked) {
+      count = count + 1;
+    }
+  });
+  prayerCountDisplay.textContent = count + " of 5 prayers checked";
 }
 
 // Step 4: Run it once on page load and listen for changes
 updatePrayerCount();
 
 allCheckboxes.forEach(function (box) {
-    box.addEventListener("change", updatePrayerCount);
+  box.addEventListener("change", updatePrayerCount);
 });
 
 const allPrayerTimes = document.querySelectorAll(".prayer-time");
@@ -79,31 +79,46 @@ const introText = document.querySelector(".quran-reader-intro");
 //  a) Get the Surah name from event.target.textContent
 //  b) Update the intro text to say "Reading: [Surah name]"
 allSurahItems.forEach(function (readSurah) {
-    readSurah.addEventListener("click", function (event) {
-        const surahName = event.target.textContent;
-        introText.textContent = "Reading: " + surahName;
-    });
+  readSurah.addEventListener("click", function (event) {
+    const surahName = event.target.textContent;
+    introText.textContent = "Reading: " + surahName;
+  });
 });
 
 // --- Task 5.3: Display real prayer times in the DOM ---
 
 // Loop through each prayer-time span and fill it with the calculated time
 allPrayerTimes.forEach(function (timeSpan) {
-    // Go up to the parent .prayer-item div
-    const parentDiv = timeSpan.parentElement;
-    // Find the .prayer-name span inside it
-    const prayerName = parentDiv.querySelector(".prayer-name").textContent;
+  // Go up to the parent .prayer-item div
+  const parentDiv = timeSpan.parentElement;
+  // Find the .prayer-name span inside it
+  const prayerName = parentDiv.querySelector(".prayer-name").textContent;
 
-    // Match the name to the right time from Adhan.js
-    if (prayerName === "Fajr") {
-        timeSpan.textContent = prayerTimes.fajr.toLocaleTimeString();
-    } else if (prayerName === "Dhuhr") {
-        timeSpan.textContent = prayerTimes.dhuhr.toLocaleTimeString();
-    } else if (prayerName === "Asr") {
-        timeSpan.textContent = prayerTimes.asr.toLocaleTimeString();
-    } else if (prayerName === "Maghrib") {
-        timeSpan.textContent = prayerTimes.maghrib.toLocaleTimeString();
-    } else if (prayerName === "Isha") {
-        timeSpan.textContent = prayerTimes.isha.toLocaleTimeString();
-    }
+  // Match the name to the right time from Adhan.js
+  if (prayerName === "Fajr") {
+    timeSpan.textContent = prayerTimes.fajr.toLocaleTimeString();
+  } else if (prayerName === "Dhuhr") {
+    timeSpan.textContent = prayerTimes.dhuhr.toLocaleTimeString();
+  } else if (prayerName === "Asr") {
+    timeSpan.textContent = prayerTimes.asr.toLocaleTimeString();
+  } else if (prayerName === "Maghrib") {
+    timeSpan.textContent = prayerTimes.maghrib.toLocaleTimeString();
+  } else if (prayerName === "Isha") {
+    timeSpan.textContent = prayerTimes.isha.toLocaleTimeString();
+  }
+});
+
+console.log("Next prayer:", prayerTimes.nextPrayer());
+
+// --- Task 5.4: Highlight the next upcoming prayer ---
+
+// Get the next prayer as a lowercase string (e.g. "fajr", "dhuhr")
+const nextPrayerName = prayerTimes.nextPrayer().toString().toLowerCase();
+
+// Loop through all prayer items and find the matching one
+document.querySelectorAll(".prayer-item").forEach(function (item) {
+  const name = item.querySelector(".prayer-name").textContent.toLowerCase();
+  if (name === nextPrayerName) {
+    item.classList.add("next-prayer");
+  }
 });

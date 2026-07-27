@@ -49,6 +49,8 @@ Statuses only upgrade on evidence of something I actually said or did.
 | CSS pseudo-classes (:hover, :focus-visible) | introduced | 24 Jul 2026 | — | Used `:hover` on prayer cards, checklist items, and Qur'an list items. Used `:focus-visible` on checkboxes. Understood that pseudo-classes are selectors that activate based on user interaction, not classes you add in HTML. |
 | transform: translateY() | introduced | 24 Jul 2026 | — | Used `translateY(-2px)` to lift cards on hover. Understood it moves an element vertically — negative values go up, positive go down. |
 | CSS transitions (animating changes) | introduced | 24 Jul 2026 | — | Added `transition` to all three card types. Correctly predicted the effect would feel smoother than instant snapping. |
+| @keyframes (defining CSS animations) | introduced | 28 Jul 2026 | — | Defined `@keyframes pulse-green` with 0%/50%/100% states to create a slow green pulse on the next prayer card. Correctly identified that percentages represent points in time during one animation cycle. |
+| CSS animation property (applying animations) | introduced | 28 Jul 2026 | — | Used `animation: pulse-green 3s ease-in-out infinite` to attach the keyframe animation to `.next-prayer`. Understood that `3s` is duration, `ease-in-out` is smoothing, `infinite` means repeat forever. |
 | outline (focus indicator) | introduced | 24 Jul 2026 | — | Used `outline` with `outline-offset` on checkbox focus state. Understood it's different from border — outline doesn't affect layout. |
 | Nested selectors (header h1) | introduced | 25 Jul 2026 | — | Correctly explained difference between styling the container (header) vs the element inside (h1). Added `header h1` rule to style heading inside header. |
 | @import (loading external CSS/fonts) | introduced | 25 Jul 2026 | — | Added Google Fonts import for Inter. Understood it tells the browser to download a font from an external source before applying styles. |
@@ -99,8 +101,10 @@ Statuses only upgrade on evidence of something I actually said or did.
 |---|---|---|---|---|
 | What a library is (pre-built code you use) | introduced | 23 Jul 2026 | — | Explained during Adhan.js decision: "Pre-built door vs raw wood." |
 | What an API is (asking internet for data) | introduced | 23 Jul 2026 | — | Explained during design decisions. |
-| Using Adhan.js for prayer times | practicing | 27 Jul 2026 | 27 Jul 2026 | Task 5.2: successfully called `adhan.Coordinates()`, `adhan.CalculationMethod.MuslimWorldLeague()`, and `new adhan.PrayerTimes()` to calculate and display all 6 prayer times in the console. Task 5.3: displayed real calculated prayer times in the DOM by matching each prayer-time span to its name and setting textContent with `.toLocaleTimeString()`. |
+| Using Adhan.js for prayer times | practicing | 27 Jul 2026 | 28 Jul 2026 | Task 5.2: successfully called `adhan.Coordinates()`, `adhan.CalculationMethod.MuslimWorldLeague()`, and `new adhan.PrayerTimes()` to calculate and display all 6 prayer times in the console. Task 5.3: displayed real calculated prayer times in the DOM. Task 5.4: used `prayerTimes.nextPrayer()` to find the next upcoming prayer and highlight it in the DOM. |
 | Reading library documentation | introduced | 27 Jul 2026 | — | Read Adhan.js API to find `Coordinates`, `CalculationMethod`, and `PrayerTimes` classes and their properties (fajr, sunrise, dhuhr, asr, maghrib, isha). |
+| classList.add() (adding CSS classes from JS) | introduced | 28 Jul 2026 | — | Used `item.classList.add("next-prayer")` to dynamically add a CSS class to the next prayer card. Understood it adds a class without removing existing ones. |
+| `.toString()` (converting values to strings) | introduced | 28 Jul 2026 | — | Used `.toString().toLowerCase()` to convert the Adhan.js Prayer enum to a lowercase string for comparison. Initially forgot parentheses on `.toString()` — debugging taught that functions need `()` to run. |
 
 ## Git & Version Control
 
@@ -138,4 +142,4 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 ---
 
-*Last updated: 27 July 2026 — Task 5.3 done (real prayer times displayed in DOM)*
+*Last updated: 28 July 2026 — Task 5.4 done (next prayer highlighted with CSS animation)*
