@@ -71,15 +71,16 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Changing content (textContent, innerHTML) | practicing | 25 Jul 2026 | — | Used `.textContent` to swap the status message text on checkbox change and to update the prayer count display. Understood it replaces all text inside the element. |
 | Event listeners (click, change, input) | practicing | 25 Jul 2026 | 27 Jul 2026 | Used `addEventListener("change", ...)` on Fajr checkbox. Task 4.3: added change listeners to all checkboxes via forEach. Task 4.4: used `addEventListener("click", ...)` on all prayer-time spans via forEach — correctly distinguished between "change" (checkbox toggled) and "click" (any tap). |
 | event.target (which element was clicked) | introduced | 27 Jul 2026 | — | Used `event.target` inside a click handler to identify which prayer-time span was tapped. Correctly understood it refers to the specific element the user clicked on. |
-| parentElement (walking up the DOM tree) | introduced | 27 Jul 2026 | — | Used `event.target.parentElement` to go from the clicked time span up to the `.prayer-item` div, then `querySelector` back down to find the prayer name. Correctly understood the parent as the bridge between sibling elements. |
+| parentElement (walking up the DOM tree) | practicing | 27 Jul 2026 | 27 Jul 2026 | Used `event.target.parentElement` in Task 4.4. Task 5.3: reused the same parentElement → querySelector pattern to match each prayer-time span to its name on page load (without a click event). Correctly recalled the approach without prompting. |
 | String concatenation (+) | practicing | 27 Jul 2026 | 27 Jul 2026 | Used `"Reading: " + surahName` to build a message from a variable. Simplified five if/else branches into one line by recognizing the pattern was the same each time. |
 | Array methods (map, filter, find) | seed | — | — | — |
 | String manipulation | seed | — | — | — |
-| Working with dates and times | introduced | 27 Jul 2026 | — | Used `new Date()` to pass today's date to Adhan.js. Understood it auto-updates each day. |
+| Working with dates and times | practicing | 27 Jul 2026 | 27 Jul 2026 | Used `new Date()` to pass today's date to Adhan.js. Task 5.3: correctly predicted that setting textContent to a Date object shows the full long string. Learned and applied `.toLocaleTimeString()` to format Date objects as readable time strings like "2:34:00 AM". |
 | Fetch API (loading JSON files) | seed | — | — | — |
 | ES modules (type="module", import/export) | introduced | 27 Jul 2026 | — | Changed script tag to type="module" and used `import * as adhan from "url"` to load Adhan.js. Understood modules load after DOM is ready and can import from URLs. Distinguished from classic scripts which run immediately and can't use import. |
 | `new` keyword (creating objects from blueprints) | introduced | 27 Jul 2026 | — | Initially guessed "current", corrected to: `new` tells JavaScript to create a fresh object from a class/blueprint. Used `new adhan.Coordinates(...)`, `new Date()`, `new adhan.PrayerTimes(...)`. |
 | `new Date()` (getting today's date) | practicing | 27 Jul 2026 | — | Correctly explained: gives the current date whenever the script runs — changes automatically each day. |
+| `.toLocaleTimeString()` (formatting Date objects) | practicing | 27 Jul 2026 | 27 Jul 2026 | Correctly identified it returns a string. Initially called it on `timeSpan` (an HTML element) instead of `prayerTimes.fajr` (a Date object) — corrected after explanation that Date methods must be called on Date objects. Applied it successfully to format all 5 prayer times. |
 
 ## Data & Storage
 
@@ -98,7 +99,7 @@ Statuses only upgrade on evidence of something I actually said or did.
 |---|---|---|---|---|
 | What a library is (pre-built code you use) | introduced | 23 Jul 2026 | — | Explained during Adhan.js decision: "Pre-built door vs raw wood." |
 | What an API is (asking internet for data) | introduced | 23 Jul 2026 | — | Explained during design decisions. |
-| Using Adhan.js for prayer times | practicing | 27 Jul 2026 | 27 Jul 2026 | Task 5.2: successfully called `adhan.Coordinates()`, `adhan.CalculationMethod.MuslimWorldLeague()`, and `new adhan.PrayerTimes()` to calculate and display all 6 prayer times in the console. |
+| Using Adhan.js for prayer times | practicing | 27 Jul 2026 | 27 Jul 2026 | Task 5.2: successfully called `adhan.Coordinates()`, `adhan.CalculationMethod.MuslimWorldLeague()`, and `new adhan.PrayerTimes()` to calculate and display all 6 prayer times in the console. Task 5.3: displayed real calculated prayer times in the DOM by matching each prayer-time span to its name and setting textContent with `.toLocaleTimeString()`. |
 | Reading library documentation | introduced | 27 Jul 2026 | — | Read Adhan.js API to find `Coordinates`, `CalculationMethod`, and `PrayerTimes` classes and their properties (fajr, sunrise, dhuhr, asr, maghrib, isha). |
 
 ## Git & Version Control
@@ -137,4 +138,4 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 ---
 
-*Last updated: 27 July 2026 — Task 5.2 done (prayer times calculated and displayed in console)*
+*Last updated: 27 July 2026 — Task 5.3 done (real prayer times displayed in DOM)*

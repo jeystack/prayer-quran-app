@@ -62,35 +62,7 @@ allCheckboxes.forEach(function (box) {
     box.addEventListener("change", updatePrayerCount);
 });
 
-// --- Task 4.4: Tap a prayer item and swap --:-- for a time ---
-
-// Step 1: Find all the prayer-time spans
-// querySelectorAll gives me a list of every element with class "prayer-time".
 const allPrayerTimes = document.querySelectorAll(".prayer-time");
-
-// Step 2: Add a click listener to each one
-// forEach runs the same code once per item in the list.
-allPrayerTimes.forEach(function (timeSpan) {
-    timeSpan.addEventListener("click", function (event) {
-        // The parent div holds both th name and the time
-        // event.target is whatever the user clicked on
-        const parentDiv = event.target.parentElement;
-        const prayerName = parentDiv.querySelector(".prayer-name").textContent;
-
-        // Decide what time to show based on which prayer was tapped
-        if (prayerName === "Fajr") {
-            timeSpan.textContent = "5:30 AM";
-        } else if (prayerName === "Dhuhr") {
-            timeSpan.textContent = "12:15 PM";
-        } else if (prayerName === "Asr") {
-            timeSpan.textContent = "3:45 PM";
-        } else if (prayerName === "Maghrib") {
-            timeSpan.textContent = "7:00 PM";
-        } else if (prayerName === "Isha") {
-            timeSpan.textContent = "9:00 PM";
-        }
-    });
-});
 
 // --- Task 4.5: Tap a Surah and see its name ---
 
@@ -111,4 +83,27 @@ allSurahItems.forEach(function (readSurah) {
         const surahName = event.target.textContent;
         introText.textContent = "Reading: " + surahName;
     });
+});
+
+// --- Task 5.3: Display real prayer times in the DOM ---
+
+// Loop through each prayer-time span and fill it with the calculated time
+allPrayerTimes.forEach(function (timeSpan) {
+    // Go up to the parent .prayer-item div
+    const parentDiv = timeSpan.parentElement;
+    // Find the .prayer-name span inside it
+    const prayerName = parentDiv.querySelector(".prayer-name").textContent;
+
+    // Match the name to the right time from Adhan.js
+    if (prayerName === "Fajr") {
+        timeSpan.textContent = prayerTimes.fajr.toLocaleTimeString();
+    } else if (prayerName === "Dhuhr") {
+        timeSpan.textContent = prayerTimes.dhuhr.toLocaleTimeString();
+    } else if (prayerName === "Asr") {
+        timeSpan.textContent = prayerTimes.asr.toLocaleTimeString();
+    } else if (prayerName === "Maghrib") {
+        timeSpan.textContent = prayerTimes.maghrib.toLocaleTimeString();
+    } else if (prayerName === "Isha") {
+        timeSpan.textContent = prayerTimes.isha.toLocaleTimeString();
+    }
 });
