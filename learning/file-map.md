@@ -36,7 +36,7 @@ Nothing in this repo should ever be a mystery box.
 | `app/css/` | Folder for CSS files. | known | Created in Task 1.1. |
 | `app/css/styles.css` | The main stylesheet — controls how the app looks. | known | I wrote this. Rules for body, header, all three card types (prayer, checklist, Qur'an), hover states with lift effect, focus-visible on checkboxes, transitions for smooth animation, and a media query for small screens. |
 | `app/js/` | Folder for JavaScript files. | known | Created in Task 1.1. |
-| `app/js/main.js` | The main JavaScript file — where all app logic lives. | known | Created in Task 4.1. I wrote the Fajr checkbox listener in Task 4.2 — selects elements with querySelector, listens for change events, swaps status text with if/else. |
+| `app/js/main.js` | The main JavaScript file — where all app logic lives. | known | Created in Task 4.1. Task 4.2: Fajr checkbox listener — querySelector, change event, if/else text swap. Task 4.3: count checked boxes with querySelectorAll and forEach, live update display. |
 | `app/data/` | Folder for Qur'an JSON data files. Empty — will be filled in Section 6. | parked | Created in Task 1.1. Data files come later. |
 
 ## Root: Screenshots

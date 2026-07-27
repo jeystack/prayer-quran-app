@@ -61,14 +61,14 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Concept | Status | Introduced | Last Reviewed | Evidence |
 |---|---|---|---|---|
 | What JavaScript is (brain/logic) | introduced | 23 Jul 2026 | — | Explained back: "Makes things functional, the brain of the application." |
-| Variables (let, const) | introduced | 25 Jul 2026 | — | Used `const` to store element references from querySelector. Understood const means "this name won't change." |
+| Variables (let, const) | practicing | 25 Jul 2026 | — | Used `const` to store element references from querySelector. Understood const means "this name won't change." Also used `let` for a counter variable that changes inside a loop — understood `let` is for values that will be reassigned. |
 | Data types (string, number, boolean, object, array) | seed | — | — | — |
 | Functions (declaration, arrow) | introduced | 25 Jul 2026 | — | Used an anonymous function as a callback in addEventListener. Understood it's code that only runs when something happens. |
 | Conditional statements (if/else) | introduced | 25 Jul 2026 | — | Used if/else to check `fajrCheckbox.checked` and swap text. Correctly explained the flow: if true do X, otherwise do Y. |
-| Loops (for, forEach) | seed | — | — | — |
+| Loops (for, forEach) | practicing | 27 Jul 2026 | — | Used `forEach` to loop through all checkboxes — count checked ones and add event listeners to each. Understood it runs the same code once per item in a list. |
 | DOM (what it is, why it exists) | introduced | 25 Jul 2026 | — | Explained: "invisible tree the browser builds from HTML that JavaScript can reach into and change." |
-| Selecting elements (getElementById, querySelector) | practicing | 25 Jul 2026 | — | Used `document.querySelector("#check-fajr")` to find elements by id. Correctly identified that `#` in the selector means "find by id." |
-| Changing content (textContent, innerHTML) | practicing | 25 Jul 2026 | — | Used `.textContent` to swap the status message text on checkbox change. Understood it replaces all text inside the element. |
+| Selecting elements (getElementById, querySelector) | practicing | 25 Jul 2026 | — | Used `document.querySelector("#check-fajr")` to find elements by id. Correctly identified that `#` in the selector means "find by id." Also used `querySelectorAll("input[type='checkbox']")` to select all checkboxes at once. |
+| Changing content (textContent, innerHTML) | practicing | 25 Jul 2026 | — | Used `.textContent` to swap the status message text on checkbox change and to update the prayer count display. Understood it replaces all text inside the element. |
 | Event listeners (click, change, input) | practicing | 25 Jul 2026 | — | Used `addEventListener("change", ...)` on the Fajr checkbox. Correctly understood it runs the function only when the checkbox is toggled, not on page load. |
 | Array methods (map, filter, find) | seed | — | — | — |
 | String manipulation | seed | — | — | — |
@@ -131,4 +131,4 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 ---
 
-*Last updated: 25 July 2026 — Task 4.2 done (first interactive JavaScript)*
+*Last updated: 27 July 2026 — Task 4.3 done (checkbox counter with forEach)*

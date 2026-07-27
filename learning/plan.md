@@ -81,7 +81,7 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 
 - [x] **4.1** Create `app/js/main.js` and link it to the HTML — prove the browser runs your code with `console.log`
 - [x] **4.2** Select a checklist checkbox and add a click listener — change a message when you check a box
-- [ ] **4.3** Count how many checkboxes are checked — show "X of 5 prayers checked" at the top
+- [x] **4.3** Count how many checkboxes are checked — show "X of 5 prayers checked" at the top
 - [ ] **4.4** Change prayer time text on click — tap a prayer item and swap `--:--` for something else
 - [ ] **4.5** Make Surah list items interactive — tap a Surah and see its name appear somewhere
 
@@ -112,4 +112,4 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 
 ---
 
-*Last updated: 25 July 2026 — Task 4.2 done (first interactive JavaScript)*
+*Last updated: 27 July 2026 — Task 4.3 done (checkbox counter with forEach)*

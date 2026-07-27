@@ -19,3 +19,31 @@ fajrCheckbox.addEventListener("change", function () {
         statusMessage.textContent = "Prayed today? Check it off.";
     }
 });
+
+// --- Task 4.3: Count how many checkboxes are checked — show "X of 5 prayers checked" at the top ---
+
+// Step 1: Find all the checkboxes at once
+// querySelectorAll returns a list of every match.
+const allCheckboxes = document.querySelectorAll("input[type='checkbox']");
+
+// Step 2: Find the count display element
+const prayerCountDisplay = document.querySelector("#prayer-count");
+
+// Step 3: Write a function that counts and displays
+// forEach runs the same code once for each item in a list.
+function updatePrayerCount() {
+    let count = 0;
+    allCheckboxes.forEach(function (box) {
+        if (box.checked) {
+            count = count + 1;
+        }
+    });
+    prayerCountDisplay.textContent = count + " of 5 prayers checked";
+}
+
+// Step 4: Run it once on page load and listen for changes
+updatePrayerCount();
+
+allCheckboxes.forEach(function (box) {
+    box.addEventListener("change", updatePrayerCount);
+});
