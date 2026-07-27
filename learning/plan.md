@@ -79,6 +79,12 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 **What you do:** Make buttons toggle, checkboxes trigger visible changes, taps on Surahs do something. The app comes alive.
 **Deliverable:** Interactive elements — tap a Surah and the view changes, check a box and something happens on screen.
 
+- [x] **4.1** Create `app/js/main.js` and link it to the HTML — prove the browser runs your code with `console.log`
+- [x] **4.2** Select a checklist checkbox and add a click listener — change a message when you check a box
+- [ ] **4.3** Count how many checkboxes are checked — show "X of 5 prayers checked" at the top
+- [ ] **4.4** Change prayer time text on click — tap a prayer item and swap `--:--` for something else
+- [ ] **4.5** Make Surah list items interactive — tap a Surah and see its name appear somewhere
+
 ### Section 5: Prayer Times with Adhan.js
 **What you learn:** How to use external JavaScript libraries, geolocation API, working with time data.
 **What you do:** Install Adhan.js, get the user's location from the browser, calculate prayer times, display them, highlight the next prayer.
@@ -106,4 +112,4 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 
 ---
 
-*Last updated: 25 July 2026 — Section 3 complete (CSS styling done)*
+*Last updated: 25 July 2026 — Task 4.2 done (first interactive JavaScript)*
