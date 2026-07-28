@@ -106,7 +106,7 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 - [x] **6.3** Display all 114 Surahs dynamically — replace the hardcoded 5-Surah list with a loop that builds the list from the JSON data
 - [x] **6.4** Build the Surah detail view — tap a Surah to see its Arabic text and English translation
 - [x] **6.5** Style the reader — make Arabic text and translation look good
-- [ ] **6.6** Final review and polish — test the full flow, update knowledge graph and file map
+- [x] **6.6** Final review and polish — test the full flow, update knowledge graph and file map
 
 ### Section 7: Daily Checklist with localStorage
 **What you learn:** How localStorage works (save, load, clear), working with dates, state management.
@@ -125,4 +125,4 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 
 ---
 
-*Last updated: 28 July 2026 — Section 6 in progress (Tasks 6.1–6.5 done, task 6.6 remaining)*
+*Last updated: 28 July 2026 — Section 6 complete. Section 7 next (Daily Checklist with localStorage).*

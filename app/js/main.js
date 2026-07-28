@@ -189,5 +189,5 @@ fetch("data/surah.json")
 document.getElementById("back-btn").addEventListener("click", function () {
   document.getElementById("surah-detail").classList.add("hidden");
   document.querySelector("#quran-reader ul").classList.remove("hidden");
-  document.querySelector("#quran-reader-intro").classList.remove("hidden");
+  document.querySelector(".quran-reader-intro").classList.remove("hidden");
 });
