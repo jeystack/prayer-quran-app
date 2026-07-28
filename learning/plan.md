@@ -94,7 +94,7 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 - [x] **5.2** Calculate prayer times using Adhan.js functions — call the library with a location and date, see the results in the console
 - [x] **5.3** Display real prayer times in the DOM — replace the `--:--` placeholders and remove the old hardcoded click-to-reveal logic
 - [x] **5.4** Highlight the next upcoming prayer — compare each prayer time to the current time, add a visual highlight to the next one
-- [ ] **5.5** Final review and polish — test the full flow, update knowledge graph and file map
+- [x] **5.5** Final review and polish — test the full flow, update knowledge graph and file map
 
 ### Section 6: Qur'an Reader with Local JSON
 **What you learn:** Fetching and parsing JSON data, rendering dynamic lists, working with Arabic text.
@@ -118,4 +118,4 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 
 ---
 
-*Last updated: 28 July 2026 — Task 5.4 done (next prayer highlighted with CSS animation)*
+*Last updated: 28 July 2026 — Section 5 complete (prayer times with Adhan.js)*

@@ -101,10 +101,17 @@ Statuses only upgrade on evidence of something I actually said or did.
 |---|---|---|---|---|
 | What a library is (pre-built code you use) | introduced | 23 Jul 2026 | — | Explained during Adhan.js decision: "Pre-built door vs raw wood." |
 | What an API is (asking internet for data) | introduced | 23 Jul 2026 | — | Explained during design decisions. |
-| Using Adhan.js for prayer times | practicing | 27 Jul 2026 | 28 Jul 2026 | Task 5.2: successfully called `adhan.Coordinates()`, `adhan.CalculationMethod.MuslimWorldLeague()`, and `new adhan.PrayerTimes()` to calculate and display all 6 prayer times in the console. Task 5.3: displayed real calculated prayer times in the DOM. Task 5.4: used `prayerTimes.nextPrayer()` to find the next upcoming prayer and highlight it in the DOM. |
+| Using Adhan.js for prayer times | understood | 27 Jul 2026 | 28 Jul 2026 | Task 5.2: successfully called `adhan.Coordinates()`, `adhan.CalculationMethod.MuslimWorldLeague()`, and `new adhan.PrayerTimes()` to calculate and display all 6 prayer times in the console. Task 5.3: displayed real calculated prayer times in the DOM. Task 5.4: used `prayerTimes.nextPrayer()` to find the next upcoming prayer and highlight it in the DOM. Task 5.5: investigated calculation method differences — correctly identified that only Fajr and Isha are affected by the method, verified output against external source (gebetszeiten.io) using the same calculation method. |
 | Reading library documentation | introduced | 27 Jul 2026 | — | Read Adhan.js API to find `Coordinates`, `CalculationMethod`, and `PrayerTimes` classes and their properties (fajr, sunrise, dhuhr, asr, maghrib, isha). |
 | classList.add() (adding CSS classes from JS) | introduced | 28 Jul 2026 | — | Used `item.classList.add("next-prayer")` to dynamically add a CSS class to the next prayer card. Understood it adds a class without removing existing ones. |
 | `.toString()` (converting values to strings) | introduced | 28 Jul 2026 | — | Used `.toString().toLowerCase()` to convert the Adhan.js Prayer enum to a lowercase string for comparison. Initially forgot parentheses on `.toString()` — debugging taught that functions need `()` to run. |
+
+### New concepts — Task 5.5
+
+| Concept | Status | Introduced | Last Reviewed | Evidence |
+|---|---|---|---|---|
+| Calculation method affects only Fajr and Isha | understood | 28 Jul 2026 | 28 Jul 2026 | Observed that MuslimWorldLeague, Egyptian, and other methods only changed Fajr and Isha times — Dhuhr, Asr, Maghrib stayed essentially the same. Correctly identified this is because only Fajr and Isha depend on the method's angles. |
+| Cross-referencing against external sources | introduced | 28 Jul 2026 | — | Compared app output against gebetszeiten.io (which also uses MuslimWorldLeague) to verify correctness. Good engineering practice. |
 
 ## Git & Version Control
 
@@ -142,4 +149,4 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 ---
 
-*Last updated: 28 July 2026 — Task 5.4 done (next prayer highlighted with CSS animation)*
+*Last updated: 28 July 2026 — Section 5 complete (prayer times with Adhan.js)*

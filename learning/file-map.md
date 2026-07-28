@@ -47,4 +47,4 @@ Nothing in this repo should ever be a mystery box.
 
 ---
 
-*Last updated: 28 July 2026 — Task 5.4 done (next prayer highlighted with CSS animation)*
+*Last updated: 28 July 2026 — Section 5 complete (prayer times with Adhan.js)*
