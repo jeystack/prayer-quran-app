@@ -165,6 +165,7 @@ fetch("data/surah.json")
           let versesHTML = "";
           for (let i = 1; i <= arabic.count; i++) {
             versesHTML += '<div class="verse">';
+            versesHTML += '<span class="verse-number">' + i + ".</span>";
             versesHTML +=
               '<p class="verse-arabic">' + arabic.verse["verse_" + i] + "</p>";
             versesHTML +=

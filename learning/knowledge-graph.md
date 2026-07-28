@@ -58,7 +58,8 @@ Statuses only upgrade on evidence of something I actually said or did.
 | @import (loading external CSS/fonts) | introduced | 25 Jul 2026 | — | Added Google Fonts import for Inter. Understood it tells the browser to download a font from an external source before applying styles. |
 | max-width | introduced | 25 Jul 2026 | — | Added max-width to main and header to cap content width. Understood it limits how wide an element can grow. |
 | margin: 0 auto (centering) | introduced | 25 Jul 2026 | — | Used margin auto to center main and header horizontally. Understood auto left/right margin distributes space equally on both sides. |
-| Google Fonts (web font loading) | introduced | 25 Jul 2026 | — | Loaded Inter from Google Fonts via @import. Understood fonts must be either installed on the system or explicitly loaded — writing the name alone isn't enough. |
+| Amiri font (Arabic web font) | introduced | 28 Jul 2026 | — | Added Amiri from Google Fonts via `@import` — applied it to `.verse-arabic` with `font-family: "Amiri", serif`. Observed the Arabic text looks noticeably better with a proper Arabic typeface. |
+| Google Fonts (web font loading) | practicing | 25 Jul 2026 | 28 Jul 2026 | Loaded Inter from Google Fonts via @import. Understood fonts must be either installed on the system or explicitly loaded — writing the name alone isn't enough. Task 6.5: added a second font (Amiri) to the same @import URL with `&family=Amiri` — Google Fonts supports multiple families in one URL, separated by `&family=`. |
 
 ## JavaScript
 
@@ -163,4 +164,4 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 ---
 
-*Last updated: 28 July 2026 — Section 6 in progress (Task 6.4 done: Surah detail view with Arabic + English)*
+*Last updated: 28 July 2026 — Section 6 in progress (Task 6.5 done: reader styling — Arabic font, verse numbers, back button, verse dividers)*

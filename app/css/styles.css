@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Amiri&display=swap");
 
 main {
   max-width: 600px;
@@ -161,6 +161,8 @@ header h1 {
 
 .verse {
   margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .verse-arabic {
@@ -169,10 +171,35 @@ header h1 {
   direction: rtl;
   line-height: 2;
   margin-bottom: 6px;
+  font-family: "Amiri", serif;
 }
 
 .verse-english {
   color: #666;
   font-size: 0.95em;
   line-height: 1.5;
+}
+
+.verse-number {
+  font-size: 0.85rem;
+  color: #2d6a4f;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+#back-btn {
+  background: none;
+  border: 1px solid #2d6a4f;
+  color: #2d6a4f;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+#back-btn:hover {
+  border-color: #2d6a4f;
+  color: #000;
 }
