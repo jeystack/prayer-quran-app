@@ -127,6 +127,8 @@ fetch("data/surah.json")
       li.classList.add("surah-item");
       // Put the Surah's English name inside it
       li.textContent = surah.title;
+      // Store the index on each element
+      li.dataset.index = surah.index;
       // Add it to the <ul>
       surahList.appendChild(li);
     });
@@ -135,8 +137,56 @@ fetch("data/surah.json")
 
     allSurahItems.forEach(function (readSurah) {
       readSurah.addEventListener("click", function (event) {
-        const surahName = event.target.textContent;
-        introText.textContent = "Reading: " + surahName;
+        // 1. Get the index from the clicked element
+        const index = event.target.dataset.index;
+
+        // 2. Build the file paths - index "001" becomes "1" for the file name
+        const arabicPath = "data/surah/surah_" + parseInt(index) + ".json";
+        const englishPath =
+          "data/translation/en/en_translation_" + parseInt(index) + ".json";
+
+        // 3. Fetch both files at the same time
+        Promise.all([
+          fetch(arabicPath).then(function (r) {
+            return r.json();
+          }),
+          fetch(englishPath).then(function (r) {
+            return r.json();
+          }),
+        ]).then(function (results) {
+          const arabic = results[0];
+          const english = results[1];
+
+          // 4. Set the title
+          document.getElementById("detail-title").textContent =
+            event.target.textContent;
+
+          // 5. Build the verses - loop through and show Arabic + English side by side
+          let versesHTML = "";
+          for (let i = 1; i <= arabic.count; i++) {
+            versesHTML += '<div class="verse">';
+            versesHTML +=
+              '<p class="verse-arabic">' + arabic.verse["verse_" + i] + "</p>";
+            versesHTML +=
+              '<p class="verse-english">' +
+              english.verse["verse_" + i] +
+              "</p>";
+            versesHTML += "</div>";
+          }
+          document.getElementById("detail-verses").innerHTML = versesHTML;
+
+          // 6. Toggle visibility - hide list, show detail
+          document.querySelector("#quran-reader ul").classList.add("hidden");
+          document.querySelector(".quran-reader-intro").classList.add("hidden");
+          document.getElementById("surah-detail").classList.remove("hidden");
+        });
       });
     });
   });
+
+// --- Back button: return to Surah list ---
+document.getElementById("back-btn").addEventListener("click", function () {
+  document.getElementById("surah-detail").classList.add("hidden");
+  document.querySelector("#quran-reader ul").classList.remove("hidden");
+  document.querySelector("#quran-reader-intro").classList.remove("hidden");
+});

@@ -152,3 +152,27 @@ header h1 {
     padding: 12px 15px;
   }
 }
+
+/* --- Task 6.4: Qur'an reader detail view --- */
+
+.hidden {
+  display: none;
+}
+
+.verse {
+  margin-bottom: 20px;
+}
+
+.verse-arabic {
+  font-size: 1.6rem;
+  text-align: right;
+  direction: rtl;
+  line-height: 2;
+  margin-bottom: 6px;
+}
+
+.verse-english {
+  color: #666;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
