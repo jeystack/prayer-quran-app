@@ -89,7 +89,7 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Concept | Status | Introduced | Last Reviewed | Evidence |
 |---|---|---|---|---|
 | What localStorage is (browser sticky note) | introduced | 23 Jul 2026 | — | Explained back: "Sticky note the browser remembers." |
-| What JSON is (data format) | introduced | 23 Jul 2026 | — | Discussed during Qur'an data decision. |
+| What JSON is (data format) | practicing | 23 Jul 2026 | 28 Jul 2026 | Examined three different JSON structures: surah.json (array of objects with nested juz data), surah/surah_1.json (verse object with Arabic text), and en_translation_1.json (verse object with English text). Correctly identified fields in each. |
 | localStorage save/load/clear | seed | — | — | — |
 | Working with dates for daily reset | seed | — | — | — |
 | Parsing JSON data | seed | — | — | — |

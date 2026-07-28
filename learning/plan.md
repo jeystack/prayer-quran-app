@@ -101,6 +101,13 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 **What you do:** Load Qur'an data from local JSON files, display the Surah list, tap a Surah to read its Arabic text and English translation.
 **Deliverable:** Browse all 114 Surahs, tap any one, read it in Arabic and English.
 
+- [x] **6.1** Find a Qur'an JSON dataset, understand its structure, and place it in `app/data/`
+- [ ] **6.2** Load the JSON file using `fetch()` — understand how fetch works, parse the response, see the data in the console
+- [ ] **6.3** Display all 114 Surahs dynamically — replace the hardcoded 5-Surah list with a loop that builds the list from the JSON data
+- [ ] **6.4** Build the Surah detail view — tap a Surah to see its Arabic text and English translation
+- [ ] **6.5** Style the reader — make Arabic text and translation look good
+- [ ] **6.6** Final review and polish — test the full flow, update knowledge graph and file map
+
 ### Section 7: Daily Checklist with localStorage
 **What you learn:** How localStorage works (save, load, clear), working with dates, state management.
 **What you do:** Save checkbox state when checked, load it when the page opens, reset automatically each new day.
