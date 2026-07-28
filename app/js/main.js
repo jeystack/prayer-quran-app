@@ -122,3 +122,13 @@ document.querySelectorAll(".prayer-item").forEach(function (item) {
     item.classList.add("next-prayer");
   }
 });
+
+// --- Task 6.2: Load Qur'an metadata with fetch() ---
+
+fetch("data/surah.json")
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
+  });

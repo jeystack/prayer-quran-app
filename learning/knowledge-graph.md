@@ -69,7 +69,7 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Conditional statements (if/else) | practicing | 25 Jul 2026 | 27 Jul 2026 | Task 4.2: used `if/else` to check `fajrCheckbox.checked` and swap text. Task 4.4: used `if/else if` chain (5 branches) to map each prayer name to its own time — correctly predicted that each branch fires independently based on the prayer name. |
 | Loops (for, forEach) | practicing | 27 Jul 2026 | 27 Jul 2026 | Used `forEach` to loop through all checkboxes — count checked ones and add event listeners to each. Task 4.4: used `forEach` again to add click listeners to all prayer-time spans. Task 4.5: same pattern on Surah list items. Consistent pattern now: `querySelectorAll` → `forEach` → action per element. |
 | DOM (what it is, why it exists) | introduced | 25 Jul 2026 | — | Explained: "invisible tree the browser builds from HTML that JavaScript can reach into and change." |
-| Selecting elements (getElementById, querySelector) | practicing | 25 Jul 2026 | 27 Jul 2026 | Task 5.2 review: correctly explained that querySelectorAll returns multiple elements. Struggled to articulate that a NodeList doesn't have `.textContent` directly — confused it with the elements inside. Refresher given: querySelector → single element (has textContent), querySelectorAll → NodeList (needs forEach to access each element). |
+| Selecting elements (getElementById, querySelector) | practicing | 25 Jul 2026 | 28 Jul 2026 | Task 5.2 review: correctly explained that querySelectorAll returns multiple elements. Struggled to articulate that a NodeList doesn't have `.textContent` directly — confused it with the elements inside. Refresher given: querySelector → single element (has textContent), querySelectorAll → NodeList (needs forEach to access each element). |
 | Changing content (textContent, innerHTML) | practicing | 25 Jul 2026 | — | Used `.textContent` to swap the status message text on checkbox change and to update the prayer count display. Understood it replaces all text inside the element. |
 | Event listeners (click, change, input) | practicing | 25 Jul 2026 | 27 Jul 2026 | Used `addEventListener("change", ...)` on Fajr checkbox. Task 4.3: added change listeners to all checkboxes via forEach. Task 4.4: used `addEventListener("click", ...)` on all prayer-time spans via forEach — correctly distinguished between "change" (checkbox toggled) and "click" (any tap). |
 | event.target (which element was clicked) | introduced | 27 Jul 2026 | — | Used `event.target` inside a click handler to identify which prayer-time span was tapped. Correctly understood it refers to the specific element the user clicked on. |
@@ -78,7 +78,10 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Array methods (map, filter, find) | seed | — | — | — |
 | String manipulation | seed | — | — | — |
 | Working with dates and times | practicing | 27 Jul 2026 | 27 Jul 2026 | Used `new Date()` to pass today's date to Adhan.js. Task 5.3: correctly predicted that setting textContent to a Date object shows the full long string. Learned and applied `.toLocaleTimeString()` to format Date objects as readable time strings like "2:34:00 AM". |
-| Fetch API (loading JSON files) | seed | — | — | — |
+| Fetch API (loading JSON files) | introduced | 28 Jul 2026 | — | Used `fetch("data/surah.json")` to load Qur'an metadata. Correctly predicted data would be an array of 114 objects. Understood the path is relative to the HTML page. |
+| Promises (.then() chaining) | introduced | 28 Jul 2026 | — | Explained why fetch uses .then(): "fetch() just keeps the promise to return the data. .then() call off the promise to actually get the data." Correctly identified that fetch returns a Promise because fetching takes time. |
+| response.json() (parsing JSON) | introduced | 28 Jul 2026 | — | Used `response.json()` inside the first .then() to parse the raw response into JavaScript data. Understood it returns another Promise that resolves to the actual data. |
+| Array indexing (zero-based) | introduced | 28 Jul 2026 | — | Initially guessed `data[-1]` for last item (Python-style), corrected to `data[113]` — JavaScript arrays are zero-indexed with no negative indexing. Correctly identified that length - 1 gives the last index. |
 | ES modules (type="module", import/export) | introduced | 27 Jul 2026 | — | Changed script tag to type="module" and used `import * as adhan from "url"` to load Adhan.js. Understood modules load after DOM is ready and can import from URLs. Distinguished from classic scripts which run immediately and can't use import. |
 | `new` keyword (creating objects from blueprints) | introduced | 27 Jul 2026 | — | Initially guessed "current", corrected to: `new` tells JavaScript to create a fresh object from a class/blueprint. Used `new adhan.Coordinates(...)`, `new Date()`, `new adhan.PrayerTimes(...)`. |
 | `new Date()` (getting today's date) | practicing | 27 Jul 2026 | — | Correctly explained: gives the current date whenever the script runs — changes automatically each day. |
@@ -149,4 +152,4 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 ---
 
-*Last updated: 28 July 2026 — Section 5 complete (prayer times with Adhan.js)*
+*Last updated: 28 July 2026 — Section 6 in progress (Task 6.2 done: fetch() loads Qur'an metadata)*
