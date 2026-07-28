@@ -78,7 +78,7 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Array methods (map, filter, find) | seed | — | — | — |
 | String manipulation | seed | — | — | — |
 | Working with dates and times | practicing | 27 Jul 2026 | 27 Jul 2026 | Used `new Date()` to pass today's date to Adhan.js. Task 5.3: correctly predicted that setting textContent to a Date object shows the full long string. Learned and applied `.toLocaleTimeString()` to format Date objects as readable time strings like "2:34:00 AM". |
-| Fetch API (loading JSON files) | introduced | 28 Jul 2026 | — | Used `fetch("data/surah.json")` to load Qur'an metadata. Correctly predicted data would be an array of 114 objects. Understood the path is relative to the HTML page. |
+| Fetch API (loading JSON files) | practicing | 28 Jul 2026 | 28 Jul 2026 | Task 6.2: used `fetch("data/surah.json")` to load Qur'an metadata. Correctly predicted data would be an array of 114 objects. Task 6.3: reused fetch to load metadata and build a dynamic list from the parsed data. Correctly identified that the first `.then()` gives a Response object and the second gives the parsed array. |
 | Promises (.then() chaining) | introduced | 28 Jul 2026 | — | Explained why fetch uses .then(): "fetch() just keeps the promise to return the data. .then() call off the promise to actually get the data." Correctly identified that fetch returns a Promise because fetching takes time. |
 | response.json() (parsing JSON) | introduced | 28 Jul 2026 | — | Used `response.json()` inside the first .then() to parse the raw response into JavaScript data. Understood it returns another Promise that resolves to the actual data. |
 | Array indexing (zero-based) | introduced | 28 Jul 2026 | — | Initially guessed `data[-1]` for last item (Python-style), corrected to `data[113]` — JavaScript arrays are zero-indexed with no negative indexing. Correctly identified that length - 1 gives the last index. |
@@ -86,6 +86,10 @@ Statuses only upgrade on evidence of something I actually said or did.
 | `new` keyword (creating objects from blueprints) | introduced | 27 Jul 2026 | — | Initially guessed "current", corrected to: `new` tells JavaScript to create a fresh object from a class/blueprint. Used `new adhan.Coordinates(...)`, `new Date()`, `new adhan.PrayerTimes(...)`. |
 | `new Date()` (getting today's date) | practicing | 27 Jul 2026 | — | Correctly explained: gives the current date whenever the script runs — changes automatically each day. |
 | `.toLocaleTimeString()` (formatting Date objects) | practicing | 27 Jul 2026 | 27 Jul 2026 | Correctly identified it returns a string. Initially called it on `timeSpan` (an HTML element) instead of `prayerTimes.fajr` (a Date object) — corrected after explanation that Date methods must be called on Date objects. Applied it successfully to format all 5 prayer times. |
+| `document.createElement()` (creating new elements) | introduced | 28 Jul 2026 | — | Used `document.createElement("li")` to create new list items from JSON data. Understood it creates an element in memory — not on the page yet until appended. |
+| `appendChild()` (adding elements to the DOM) | introduced | 28 Jul 2026 | — | Used `surahList.appendChild(li)` to add each created `<li>` to the `<ul>`. Understood it's the final step that puts a created element onto the page. |
+| Timing: querySelectorAll needs existing elements | introduced | 28 Jul 2026 | — | Discovered that querySelectorAll at the top of the script returned an empty NodeList because the dynamic `<li>` elements didn't exist yet. Moved the click handler setup inside `.then()` after the loop that creates elements — understood elements must exist in the DOM before querySelectorAll can find them. |
+| Dynamic list rendering (building HTML from data) | introduced | 28 Jul 2026 | — | Replaced 5 hardcoded `<li>` items with a forEach loop that builds all 114 from JSON data. Understood the pattern: loop through data → create element → set content → append to parent. |
 
 ## Data & Storage
 
@@ -152,4 +156,4 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 ---
 
-*Last updated: 28 July 2026 — Section 6 in progress (Task 6.2 done: fetch() loads Qur'an metadata)*
+*Last updated: 28 July 2026 — Section 6 in progress (Task 6.3 done: dynamic Surah list from JSON)*

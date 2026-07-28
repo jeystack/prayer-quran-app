@@ -103,7 +103,7 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 
 - [x] **6.1** Find a Qur'an JSON dataset, understand its structure, and place it in `app/data/`
 - [x] **6.2** Load the JSON file using `fetch()` — understand how fetch works, parse the response, see the data in the console
-- [ ] **6.3** Display all 114 Surahs dynamically — replace the hardcoded 5-Surah list with a loop that builds the list from the JSON data
+- [x] **6.3** Display all 114 Surahs dynamically — replace the hardcoded 5-Surah list with a loop that builds the list from the JSON data
 - [ ] **6.4** Build the Surah detail view — tap a Surah to see its Arabic text and English translation
 - [ ] **6.5** Style the reader — make Arabic text and translation look good
 - [ ] **6.6** Final review and polish — test the full flow, update knowledge graph and file map
@@ -125,4 +125,4 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 
 ---
 
-*Last updated: 28 July 2026 — Section 6 in progress (Tasks 6.1–6.2 done, tasks 6.3–6.6 remaining)*
+*Last updated: 28 July 2026 — Section 6 in progress (Tasks 6.1–6.3 done, tasks 6.4–6.6 remaining)*
