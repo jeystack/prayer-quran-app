@@ -207,4 +207,4 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 ---
 
-*Last updated: 29 July 2026 — Section 8, Task 8.5 complete. Manifest linked in HTML, service worker registered from main.js. Added concepts: manifest link tag, service worker registration, feature detection.*
+*Last updated: 29 July 2026 — Section 8 complete (6/6). Task 8.6 done: tested offline mode (all three sections work), installed PWA to home screen, Lighthouse scores 99/100/96/90. Ready for Section 9.*

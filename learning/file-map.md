@@ -54,4 +54,4 @@ Nothing in this repo should ever be a mystery box.
 
 ---
 
-*Last updated: 29 July 2026 — Section 8, Task 8.5 complete. Manifest linked in HTML head, service worker registered from main.js.*
+*Last updated: 29 July 2026 — Section 8 complete (6/6). Task 8.6 done: offline mode tested, PWA installed to home screen, Lighthouse audit passed.*

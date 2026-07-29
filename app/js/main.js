@@ -1,5 +1,5 @@
 // console.log("JS is live and running!");
-import * as adhan from "https://esm.sh/adhan";
+import * as adhan from "./adhan.esm.js";
 
 // --- Task 5.2: Calculate prayer times with Adhan.js ---
 const coordinates = new adhan.Coordinates(51.74, 6.98);

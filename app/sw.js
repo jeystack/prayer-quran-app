@@ -11,6 +11,7 @@ self.addEventListener("install", (event) => {
         "manifest.json",
         "images/app-icon-192x192.png",
         "images/app-icon-512x512.png",
+        "js/adhan.esm.js",
         "data/surah.json",
       ]);
     }),
