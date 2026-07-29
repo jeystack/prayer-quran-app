@@ -1,0 +1,49 @@
+# Name of this workflow - shows up in GitHub's Actions tab
+name: Deploy to GitHub Pages
+
+# What triggers the workflow
+on:
+  # Run when code is pushed to the main branch
+  push:
+    branches: ["main"]
+  # Also allow manual trigger from GitHub's Actions tab
+  workflow_dispatch:
+
+# Give the robot permission to deploy
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deployment at a time - if a new one starts, cancel the old one
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # The deploy job - what the robot actually does
+  deploy:
+    # This job runs on a fresh Ubuntu Linux server
+    runs-on: ubuntu-latest
+
+    # Tell GitHub this is the Pages deployment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      # 1. Checkout - download the repo
+      - name: Checkout
+        uses: actions/checkout@v4
+      # 2. Setup Pages - configure GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      # 3. Upload artifact - upload the app/ folder
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "app"
+      # 4. Deploy to GitHub Pages - publish it live
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

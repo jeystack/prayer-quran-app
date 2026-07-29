@@ -16,7 +16,7 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Concept | Status | Introduced | Last Reviewed | Evidence |
 |---|---|---|---|---|
 | What HTML is (structure of a page) | understood | 23 Jul 2026 | 24 Jul 2026 | Explained back: "HTML is the fundament, walls, stairs, and doors." Refreshed: correctly identified as markup language (structure), not programming language (logic) and not styling (CSS). |
-| Semantic HTML (header, main, section, nav) | practicing | 24 Jul 2026 | — | Added header, main, and three section tags to index.html. Understood that semantic tags give meaning to content, not visual style. |
+| Semantic HTML (header, main, section, nav, footer) | practicing | 24 Jul 2026 | 29 Jul 2026 | Added header, main, and three section tags to index.html. Task 9.1: added `<footer>` semantic element for the version footer. Understood that `<footer>` is a semantic tag like `<header>` — it describes meaning (the bottom of the page content), not appearance. 
 | Headings and text hierarchy (h1–h6, p) | practicing | 24 Jul 2026 | — | Used h1 and h2 in index.html. Wrote prayer times structure independently. |
 | Divs and sections as containers | practicing | 24 Jul 2026 | — | Used divs with classes to group prayer items. Understood block vs inline behavior of divs vs spans. |
 | Class attributes (class="...") | practicing | 24 Jul 2026 | — | Used class on prayer-item divs. Correctly explained: classes let you style many elements with one CSS rule. |
@@ -144,7 +144,11 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Meaningful commit messages | practicing | 24 Jul 2026 | 24 Jul 2026 | Wrote my own commit message: "setup the foundation for this project and my learning journey." |
 | git push / git pull | practicing | 24 Jul 2026 | 24 Jul 2026 | Pushed code to GitHub, diagnosed SSH issue, fixed it, and pushed successfully. |
 | SSH keys & authentication | introduced | 24 Jul 2026 | — | Discovered ssh-agent had no identities, ran ssh-add, confirmed connection with `ssh -T`. |
-| Branching | seed | — | — | — |
+| Branching (create, switch, merge, delete) | practicing | 29 Jul 2026 | — | Explained branches as "parallel timelines" — two streets that merge, with commits as cars flowing onto main. Created `add-footer` branch with `git switch -c`, committed a footer change on it, switched back to `main` (correctly predicted the footer would disappear), merged with `git merge add-footer`, and deleted the branch with `git branch -d`. Independently ran every command himself. Understood that deleting a branch removes the label, not the commits. |
+| git switch -c (create and switch to a new branch) | introduced | 29 Jul 2026 | — | Used `git switch -c add-footer` to create and switch to a new branch in one command. Understood this is a modern alternative to `git checkout -b`. |
+| git merge (combining branches) | introduced | 29 Jul 2026 | — | Used `git merge add-footer` to bring the `add-footer` commit onto `main`. Experienced a fast-forward merge (no conflicts) since main hadn't diverged. Understood that merging grafts commits from one branch into another. |
+| git branch -d (deleting a branch) | introduced | 29 Jul 2026 | — | Used `git branch -d add-footer` after merging. Understood that the branch pointer is deleted but the commits remain because they're now reachable from `main`. |
+| Meaningful commit messages | practicing | 24 Jul 2026 | 29 Jul 2026 | Task 9.1: wrote commit message "Add version footer to index.html and break Section 9 into tasks" after discussion about avoiding process-language ("to test git branching") and focusing on what changed. |
 
 ## PWA & Deployment
 
@@ -172,6 +176,21 @@ Statuses only upgrade on evidence of something I actually said or did.
 | On-demand (runtime) caching | introduced | 29 Jul 2026 | — | Added on-demand caching for `data/` requests inside the fetch handler: when a cache miss succeeds over the network, cloned the response with `.clone()` and stored it with `cache.put()`. Understood that `.clone()` is necessary because a Response object can only be consumed once — the page consumes the original, the cache stores the clone. |
 | Cache versioning with CACHE_NAME | introduced | 29 Jul 2026 | — | Used `const CACHE_NAME = "prayer-quran-v1"` at the top of sw.js. Understood that changing this name (e.g., to "v2") creates a new cache alongside the old one, and the activate handler deletes old caches by comparing each name to the current CACHE_NAME. |
 | Service worker lifecycle (install → activate → fetch) | introduced | 29 Jul 2026 | — | Understood the three phases: install fires first (setup), activate fires next (cleanup, takes control), fetch fires repeatedly for every page request. |
+| Response.clone() (duplicating fetch responses) | introduced | 29 Jul 2026 | — | Used `networkResponse.clone()` inside the fetch handler to duplicate the response for on-demand caching. Understood that a Response body can only be read once — cloning creates an identical copy that can be independently consumed. |
+
+## CI/CD & Deployment Automation
+
+| Concept | Status | Introduced | Last Reviewed | Evidence |
+|---|---|---|---|---|
+| What CI/CD is (Continuous Integration / Deployment) | introduced | 29 Jul 2026 | — | Explained as: robot on GitHub's servers that runs steps every time you push code. CI = check nothing's broken, CD = put it live. |
+| What GitHub Actions is (automated workflows on GitHub) | introduced | 29 Jul 2026 | — | Understood as a robot that waits for instructions — trigger (push to main) → steps (checkout, upload, deploy). |
+| What YAML is (human-friendly config format) | introduced | 29 Jul 2026 | — | Compared to JSON — same data, easier to read. Key rules: indentation matters (no tabs), `key: value` with space, `- item` for lists, `#` for comments. |
+| Workflow file structure (trigger → permissions → job → steps) | introduced | 29 Jul 2026 | — | Understood the flow: `on:` defines what starts it, `permissions:` authorizes it, `jobs:` defines what it does, `steps:` lists individual actions. |
+| Workflow triggers (push vs workflow_dispatch) | introduced | 29 Jul 2026 | — | Correctly distinguished the two triggers: push runs automatically when code is pushed to main, workflow_dispatch adds a manual "Run workflow" button in the Actions tab. First deployment can use the manual trigger. |
+| actions/checkout (downloads repo to runner) | introduced | 29 Jul 2026 | — | Understood this step downloads the repo to GitHub's server so subsequent steps can access the files. |
+| actions/configure-pages (prepares GitHub Pages for deployment) | introduced | 29 Jul 2026 | — | Understood this sets up the Pages environment so the deploy step knows where to publish. |
+| actions/upload-pages-artifact (uploads files as deployable artifact) | introduced | 29 Jul 2026 | — | Understood it zips up a folder and hands it to GitHub's Pages system — `path: 'app'` tells it which folder to upload. |
+| actions/deploy-pages (publishes artifact to live Pages URL) | introduced | 29 Jul 2026 | — | Understood this takes the uploaded artifact and publishes it to the live GitHub Pages URL. The `id: deployment` connects to `${{ steps.deployment.outputs.page_url }}` in the environment block. |
 | Response.clone() (duplicating fetch responses) | introduced | 29 Jul 2026 | — | Used `networkResponse.clone()` inside the fetch handler to duplicate the response for on-demand caching. Understood that a Response body can only be read once — cloning creates an identical copy that can be independently consumed. |
 
 ## Images & Media

@@ -136,12 +136,12 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 **What you do:** Clean up your Git history, push to GitHub, enable GitHub Pages, get a live URL.
 **Deliverable:** Your app is live on the internet at a public URL, accessible from any device.
 
-- [ ] **9.1** Understand branching — learn what branches are, why we use them, and practice creating, switching, and merging a branch with a small change
-- [ ] **9.2** Set up GitHub Actions deployment — create a workflow file (`.github/workflows/deploy.yml`) that deploys the `app/` folder to GitHub Pages
+- [x] **9.1** Understand branching — learn what branches are, why we use them, and practice creating, switching, and merging a branch with a small change
+- [x] **9.2** Set up GitHub Actions deployment — create a workflow file (`.github/workflows/deploy.yml`) that deploys the `app/` folder to GitHub Pages
 - [ ] **9.3** Enable GitHub Pages — push the workflow, turn on Pages in repo settings, and see your app go live
 - [ ] **9.4** Test the live app — open the public URL on desktop and phone, verify all three sections work, share the link
 - [ ] **9.5** Final review — write a meaningful commit message, update knowledge graph and file map
 
 ---
 
-_Last updated: 29 July 2026 — Starting Section 9 (5 tasks). Breaking Section 9 into tasks: 9.1 (branching), 9.2 (GitHub Actions deploy workflow), 9.3 (enable Pages), 9.4 (test live), 9.5 (final review)._
+_Last updated: 29 July 2026 — 9.2 complete (GitHub Actions workflow). Task 9.3 next: enable GitHub Pages, push, see app go live._
