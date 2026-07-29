@@ -124,6 +124,13 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 **What you do:** Create the manifest (app name, icons, theme color), write a service worker that caches files for offline use.
 **Deliverable:** The app installs to your phone's home screen and works without internet.
 
+- [x] **8.1** Understand what a PWA actually is — the three pillars (manifest, service worker, HTTPS), how installability works, what "works offline" means in practice
+- [x] **8.2** Create app icons — make the PNG icon files the manifest needs (192x192 and 512x512)
+- [x] **8.3** Create manifest.json — write the manifest with app name, icons, theme color, display mode, start URL
+- [ ] **8.4** Write a service worker — create sw.js that caches all app files and serves them from cache offline
+- [ ] **8.5** Register the PWA — link manifest in HTML and register the service worker from main.js
+- [ ] **8.6** Test and verify — Lighthouse audit, offline mode testing, try installing to the home screen
+
 ### Section 9: Git Workflow & Deployment
 **What you learn:** Branching, meaningful commits, push/pull, GitHub Pages deployment.
 **What you do:** Clean up your Git history, push to GitHub, enable GitHub Pages, get a live URL.
@@ -131,4 +138,4 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 
 ---
 
-_Last updated: 29 July 2026 — Task 7.5 done. Section 7 complete. Next: Section 8._
+_Last updated: 29 July 2026 — Task 8.3 done. manifest.json created with name, icons, theme_color, background_color, display, and start_url. Next: Task 8.4 — service worker._

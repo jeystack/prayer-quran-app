@@ -150,11 +150,36 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 | Concept | Status | Introduced | Last Reviewed | Evidence |
 |---|---|---|---|---|
-| What a PWA is (website that feels like an app) | introduced | 23 Jul 2026 | — | Discussed during project scoping. |
+| What a PWA is (website that feels like an app) | practicing | 23 Jul 2026 | 29 Jul 2026 | Discussed during project scoping. **Task 8.1:** explained all three pillars (manifest, service worker, HTTPS), what each does, and the "progressive" fallback behaviour. Correctly distinguished service worker cache (developer-controlled) from browser HTTP cache (browser-controlled). Understood that a missing service worker or misconfigured manifest fails gracefully — the website still works, just without PWA features. |
 | What deployment means (putting it on the internet) | introduced | 23 Jul 2026 | — | Explained: "Taking files from laptop to a public website." |
-| manifest.json | seed | — | — | — |
-| Service workers (offline caching) | seed | — | — | — |
+| manifest.json | practicing | 29 Jul 2026 | 29 Jul 2026 | **Task 8.1:** explained what a manifest is: a JSON file that configures the installed app experience — name, icons, theme color, display mode, start URL. **Task 8.3:** independently wrote the complete manifest.json with all fields — names, icons array with src/sizes/type, theme_color, background_color, display, start_url. Understood the distinction between theme_color (browser chrome) and background_color (splash screen). Corrected theme-color hyphens to theme_color underscores after being reminded that manifest uses underscore-separated property names. |
+| Service workers (offline caching) | introduced | 29 Jul 2026 | — | Explained as a background JS file that intercepts network requests, caches files, and serves them offline. Distinguished from browser HTTP cache: the developer decides what goes in, when it updates, and when old stuff gets deleted. |
+| HTTPS requirement for PWAs | introduced | 29 Jul 2026 | — | Explained that PWAs require HTTPS because service workers are powerful enough to be dangerous if injected into. localhost counts as secure during development; GitHub Pages provides HTTPS automatically for deployment. |
 | GitHub Pages setup | seed | — | — | — |
+| PWA icon sizes (192x192, 512x512) | introduced | 29 Jul 2026 | — | Learned that PWA manifests require specific PNG sizes: 192x192 and 512x512. Understood that different OS/launcher contexts use different sizes — the manifest's `sizes` attribute tells the OS which one to use. |
+| manifest field: theme_color vs background_color | introduced | 29 Jul 2026 | — | Independently guessed that theme_color controls the browser chrome/app window and background_color controls the splash screen. Both correct. |
+| manifest field: display (standalone) | introduced | 29 Jul 2026 | — | Added `display: "standalone"` to the manifest. Understood this removes browser chrome (URL bar, tabs) so the app opens in its own window like a native app. |
+| manifest field: icons (src, sizes, type) | introduced | 29 Jul 2026 | — | Added two icon entries to the manifest — one at 192x192 and one at 512x512. Understood that `src` is relative path, `sizes` tells the OS which to use per context, `type` declares the MIME format. |
+| JSON underscores in manifest spec | introduced | 29 Jul 2026 | — | Initially wrote `theme-color` with hyphens (HTML/CSS style), corrected to `theme_color` (underscores). Learned that manifest.json uses underscore-separated property names, not kebab-case. |
+
+## Images & Media
+
+| Concept | Status | Introduced | Last Reviewed | Evidence |
+|---|---|---|---|---|---|
+| What SVG is (vector image format) | introduced | 29 Jul 2026 | — | Explained correctly: "svg can be scaled" — a vector format using math (curves, lines, coordinates) that stays crisp at any size. Compared to a "blueprint" you can print at any size. |
+| What PNG is (raster image format) | introduced | 29 Jul 2026 | — | Explained correctly: "png is a plain image" — a fixed grid of pixels, blurry when scaled up. Compared to a "photo" at a fixed resolution. |
+| SVG as design source vs PNG for runtime | introduced | 29 Jul 2026 | — | Understood the workflow: SVG is the editable master design, PNGs at specific sizes are what the app/browser/OS consume at runtime. |
+| File extension vs actual format | introduced | 29 Jul 2026 | — | Discovered that `app-icon-192x192.png` was actually SVG content with a `.png` extension — verified with `file` command. Learned that renaming changes the extension but not the bytes inside. Used `file` to check the actual format. |
+
+## Terminal & Command Line
+
+| Concept | Status | Introduced | Last Reviewed | Evidence |
+|---|---|---|---|---|
+| `mv` command (rename/move files) | practicing | 29 Jul 2026 | — | Correctly predicted that `mv` renames files. Used it to rename generated PNGs from `app-icon.svg.png` to clean names. |
+| `rm` command (delete files) | introduced | 29 Jul 2026 | — | Ran `rm app/images/app-icon-192x192.png` to delete a misnamed file (SVG with a .png extension). Understood the command deletes files permanently (no trash bin). |
+| `file` command (check file type) | introduced | 29 Jul 2026 | — | Used `file` to discover that a `.png`-named file was actually SVG content. Understood it reads the file's magic bytes (header signature), not the extension. |
+| `qlmanage` (QuickLook thumbnail generator) | introduced | 29 Jul 2026 | — | Used `qlmanage -t -s 192 -o output_dir source.svg` to generate a PNG thumbnail from an SVG at a specific pixel size. Understood the naming quirk: output is always `{input_filename}.png`. |
+| `sips` (scriptable image processing) | introduced | 29 Jul 2026 | — | Used `sips -g pixelWidth -g pixelHeight file` to verify PNG dimensions after generation. |
 
 ## AI-Era Engineering Practice
 
@@ -166,8 +191,8 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Knowledge graphs for tracking learning | introduced | 23 Jul 2026 | — | You asked for this — you understand why it exists. |
 | File maps for project transparency | introduced | 23 Jul 2026 | — | You asked for this — you understand why it exists. |
 | Scoping an MVP (what's in, what's parked) | introduced | 23 Jul 2026 | — | We split features into MVP and parking lot together. |
-| Browser cache / hard refresh | introduced | 28 Jul 2026 | — | Task 6.6: after fixing a bug in main.js, the old behavior persisted because the browser was loading a cached version. Learned to use Cmd+Shift+R (hard refresh) to force the browser to reload files from disk. Understood that browsers cache scripts to speed up load times, but this can hide recent changes during development. |
+| Browser cache / hard refresh | practicing | 28 Jul 2026 | 29 Jul 2026 | Task 6.6: after fixing a bug in main.js, the old behavior persisted because the browser was loading a cached version. Learned to use Cmd+Shift+R (hard refresh) to force the browser to reload files from disk. Understood that browsers cache scripts to speed up load times, but this can hide recent changes during development. **Task 8.1:** clarified the distinction between bypassing cache (hard refresh) vs. deleting cache — correctly identified that Cmd+Shift+R bypasses rather than clears, and contrasted browser HTTP cache (browser-controlled) with service worker cache (developer-controlled). |
 
 ---
 
-*Last updated: 29 July 2026 — Section 7 complete (Daily Checklist with localStorage)*
+*Last updated: 29 July 2026 — Section 8, Task 8.2 complete. App icons created. Added concepts: SVG vs PNG, PWA icon sizes, mv/rm/file/qlmanage/sips commands.*
