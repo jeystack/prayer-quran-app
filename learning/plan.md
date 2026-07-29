@@ -117,7 +117,7 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 - [x] **7.2** Save checkbox states to localStorage when the user checks or unchecks a prayer
 - [x] **7.3** Restore saved checkbox states when the page loads — make the checkmarks survive a page refresh
 - [x] **7.4** Add daily auto-reset — store today's date, detect a new day, clear yesterday's checks
-- [ ] **7.5** Final review and polish — test the full flow, update knowledge graph and file map
+- [x] **7.5** Final review and polish — test the full flow, update knowledge graph and file map
 
 ### Section 8: PWA Setup
 **What you learn:** What a PWA is, manifest.json, service workers, offline caching.
@@ -131,4 +131,4 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 
 ---
 
-_Last updated: 29 July 2026 — Task 7.4 done. Section 7 in progress._
+_Last updated: 29 July 2026 — Task 7.5 done. Section 7 complete. Next: Section 8._
