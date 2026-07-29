@@ -127,7 +127,7 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 - [x] **8.1** Understand what a PWA actually is — the three pillars (manifest, service worker, HTTPS), how installability works, what "works offline" means in practice
 - [x] **8.2** Create app icons — make the PNG icon files the manifest needs (192x192 and 512x512)
 - [x] **8.3** Create manifest.json — write the manifest with app name, icons, theme color, display mode, start URL
-- [ ] **8.4** Write a service worker — create sw.js that caches all app files and serves them from cache offline
+- [x] **8.4** Write a service worker — create sw.js that caches all app files and serves them from cache offline
 - [ ] **8.5** Register the PWA — link manifest in HTML and register the service worker from main.js
 - [ ] **8.6** Test and verify — Lighthouse audit, offline mode testing, try installing to the home screen
 
