@@ -56,4 +56,4 @@ Nothing in this repo should ever be a mystery box.
 
 ---
 
-*Last updated: 29 July 2026 — Section 8 complete (6/6). Task 8.6 done: offline mode tested, PWA installed to home screen, Lighthouse audit passed.*
+*Last updated: 30 July 2026 — Section 9 (4/5). Task 9.4 done: live app tested on desktop and phone, all sections verified, PWA installed to home screen. Task 9.5 (final review) remains.*

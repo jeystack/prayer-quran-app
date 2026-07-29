@@ -139,7 +139,7 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 - [x] **9.1** Understand branching — learn what branches are, why we use them, and practice creating, switching, and merging a branch with a small change
 - [x] **9.2** Set up GitHub Actions deployment — create a workflow file (`.github/workflows/deploy.yml`) that deploys the `app/` folder to GitHub Pages
 - [x] **9.3** Enable GitHub Pages — push the workflow, turn on Pages in repo settings, and see your app go live
-- [ ] **9.4** Test the live app — open the public URL on desktop and phone, verify all three sections work, share the link
+- [x] **9.4** Test the live app — open the public URL on desktop and phone, verify all three sections work, share the link
 - [ ] **9.5** Final review — write a meaningful commit message, update knowledge graph and file map
 
 ---
