@@ -16,7 +16,7 @@ Statuses only upgrade on evidence of something I actually said or did.
 | Concept | Status | Introduced | Last Reviewed | Evidence |
 |---|---|---|---|---|
 | What HTML is (structure of a page) | understood | 23 Jul 2026 | 24 Jul 2026 | Explained back: "HTML is the fundament, walls, stairs, and doors." Refreshed: correctly identified as markup language (structure), not programming language (logic) and not styling (CSS). |
-| Semantic HTML (header, main, section, nav, footer) | practicing | 24 Jul 2026 | 29 Jul 2026 | Added header, main, and three section tags to index.html. Task 9.1: added `<footer>` semantic element for the version footer. Understood that `<footer>` is a semantic tag like `<header>` — it describes meaning (the bottom of the page content), not appearance. 
+| Semantic HTML (header, main, section, nav, footer) | practicing | 24 Jul 2026 | 29 Jul 2026 | Added header, main, and three section tags to index.html. Task 9.1: added `<footer>` semantic element for the version footer. Understood that `<footer>` is a semantic tag like `<header>` — it describes meaning (the bottom of the page content), not appearance. |
 | Headings and text hierarchy (h1–h6, p) | practicing | 24 Jul 2026 | — | Used h1 and h2 in index.html. Wrote prayer times structure independently. |
 | Divs and sections as containers | practicing | 24 Jul 2026 | — | Used divs with classes to group prayer items. Understood block vs inline behavior of divs vs spans. |
 | Class attributes (class="...") | practicing | 24 Jul 2026 | — | Used class on prayer-item divs. Correctly explained: classes let you style many elements with one CSS rule. |
@@ -165,11 +165,9 @@ Statuses only upgrade on evidence of something I actually said or did.
 | manifest field: display (standalone) | practicing | 29 Jul 2026 | 30 Jul 2026 | Added `display: "standalone"` to the manifest. Understood this removes browser chrome (URL bar, tabs) so the app opens in its own window like a native app. **Task 9.4:** on iOS, Safari's "Open as Web App" toggle was automatically enabled when adding to the home screen — confirming the manifest's standalone display mode is recognized and respected by iOS Safari. |
 | manifest field: icons (src, sizes, type) | introduced | 29 Jul 2026 | — | Added two icon entries to the manifest — one at 192x192 and one at 512x512. Understood that `src` is relative path, `sizes` tells the OS which to use per context, `type` declares the MIME format. |
 | JSON underscores in manifest spec | introduced | 29 Jul 2026 | — | Initially wrote `theme-color` with hyphens (HTML/CSS style), corrected to `theme_color` (underscores). Learned that manifest.json uses underscore-separated property names, not kebab-case. |
-
 | Service worker registration (navigator.serviceWorker.register) | introduced | 29 Jul 2026 | — | Added `navigator.serviceWorker.register("sw.js")` at the bottom of main.js to tell the browser to download and activate the service worker. Used `"serviceWorker" in navigator` as a feature detection guard — correctly identified that old browsers without the ServiceWorker API would skip the block entirely. Saw "Service worker registered!" in the console confirming it worked. |
 | Feature detection (property in object) | introduced | 29 Jul 2026 | — | Used `"serviceWorker" in navigator` — understood that this expression checks whether the property exists on the object and returns true/false without crashing. Explained that IE 10 would return false and skip the block gracefully. |
 | Manifest link tag (<link rel="manifest">) | introduced | 29 Jul 2026 | — | Added `<link rel="manifest" href="manifest.json">` to the HTML <head>. Understood this is the same kind of link tag as `<link rel="stylesheet">` — the browser reads it to discover the PWA manifest and enable installability. |
-
 | Cache API (caches.open, caches.match, cache.addAll, cache.put, caches.keys, caches.delete) | introduced | 29 Jul 2026 | — | Used `caches.open(CACHE_NAME)` to open/create a cache, `cache.addAll([...])` to pre-cache a list of files, `caches.match(event.request)` to look up cached responses, `cache.put(request, clone)` to store a response on demand, `caches.keys()` to list all caches, and `caches.delete(name)` to remove old ones. |
 | event.waitUntil vs event.respondWith | introduced | 29 Jul 2026 | — | Understood the distinction: `waitUntil` delays the event's completion (used in install/activate to wait for setup/cleanup Promises), while `respondWith` provides a custom response to an intercepted request (used in fetch). |
 | Cache-first strategy | introduced | 29 Jul 2026 | — | Understood the pattern: check cache first for the requested file → return cached version if present → fall back to network if not. |
@@ -196,7 +194,7 @@ Statuses only upgrade on evidence of something I actually said or did.
 ## Images & Media
 
 | Concept | Status | Introduced | Last Reviewed | Evidence |
-|---|---|---|---|---|---|
+|---|---|---|---|---|
 | What SVG is (vector image format) | introduced | 29 Jul 2026 | — | Explained correctly: "svg can be scaled" — a vector format using math (curves, lines, coordinates) that stays crisp at any size. Compared to a "blueprint" you can print at any size. |
 | What PNG is (raster image format) | introduced | 29 Jul 2026 | — | Explained correctly: "png is a plain image" — a fixed grid of pixels, blurry when scaled up. Compared to a "photo" at a fixed resolution. |
 | SVG as design source vs PNG for runtime | introduced | 29 Jul 2026 | — | Understood the workflow: SVG is the editable master design, PNGs at specific sizes are what the app/browser/OS consume at runtime. |
