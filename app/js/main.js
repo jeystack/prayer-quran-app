@@ -55,11 +55,39 @@ function updatePrayerCount() {
   prayerCountDisplay.textContent = count + " of 5 prayers checked";
 }
 
+// --- Task 7.4: Daily auto-reset ---
+const todayString = new Date().toISOString().split("T")[0];
+const savedDate = localStorage.getItem("checklist-date");
+if (savedDate !== todayString) {
+  allCheckboxes.forEach(function (box) {
+    localStorage.removeItem(box.id);
+  });
+  localStorage.setItem("checklist-date", todayString);
+}
+
+// --- Task 7.3: Restore saved checkbox states when the page loads ---
+// On page load, read each checkbox's saved state from localStorage and apply it.
+allCheckboxes.forEach(function (box) {
+  const savedState = localStorage.getItem(box.id);
+
+  // If the saved value is the string "true", check the box.
+  // If nothing is saved (null), leave it unchecked - it already is.
+  if (savedState === "true") {
+    box.checked = true;
+  }
+});
+
 // Step 4: Run it once on page load and listen for changes
 updatePrayerCount();
 
 allCheckboxes.forEach(function (box) {
   box.addEventListener("change", updatePrayerCount);
+
+  // Use: localStorage.setItem(key, value)
+  box.addEventListener("change", function () {
+    localStorage.setItem(box.id, box.checked);
+    localStorage.setItem("checklist-date", todayString);
+  });
 });
 
 const allPrayerTimes = document.querySelectorAll(".prayer-time");

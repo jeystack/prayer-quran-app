@@ -103,10 +103,15 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 | Concept | Status | Introduced | Last Reviewed | Evidence |
 |---|---|---|---|---|
-| What localStorage is (browser sticky note) | introduced | 23 Jul 2026 | — | Explained back: "Sticky note the browser remembers." |
+| What localStorage is (browser sticky note) | practicing | 23 Jul 2026 | 29 Jul 2026 | Explained: "survives page reloads, reboots, etc — regular variable JS would start at 0 and the data is gone." Correctly identified the key difference between localStorage and regular variables. Task 7.1: ran setItem, getItem, removeItem, and clear in the browser console and observed the results in real time. |
 | What JSON is (data format) | practicing | 23 Jul 2026 | 28 Jul 2026 | Examined three different JSON structures: surah.json (array of objects with nested juz data), surah/surah_1.json (verse object with Arabic text), and en_translation_1.json (verse object with English text). Correctly identified fields in each. |
-| localStorage save/load/clear | seed | — | — | — |
-| Working with dates for daily reset | seed | — | — | — |
+| localStorage save/load/clear (setItem, getItem, removeItem, clear) | practicing | 29 Jul 2026 | 29 Jul 2026 | Task 7.1: ran all four localStorage methods in the Console — setItem("name", "Jeremy") stored a value, getItem("name") returned it, removeItem("name") deleted it, clear() wiped everything. Inspected results live in DevTools Application → Storage → Local Storage. Correctly predicted each method's behavior before running it. Task 7.2: independently wrote `localStorage.setItem(box.id, box.checked)` inside the forEach loop after being guided through the logic — correctly identified that `box.id` gives the unique key per checkbox and `box.checked` gives the state. Tested in browser — verified 5 entries appeared in localStorage, one per checkbox. Noticed localStorage stores everything as strings. Task 7.3: restored checkbox states on page load — wrote `const savedState = localStorage.getItem(box.id)` to read saved values, then `if (savedState === "true") { box.checked = true; }` to apply them. Correctly identified that comparing to the string `"true"` (not the boolean) is necessary because localStorage stores everything as strings. |
+| Restoring state from localStorage on page load | practicing | 29 Jul 2026 | — | Task 7.3: added a forEach loop that runs on page load to read each checkbox's saved state and apply it. Correctly placed the restore block before `updatePrayerCount()` so the prayer count starts accurate. Used the pattern: `getItem` → compare to `"true"` → set `box.checked`. |
+| Working with dates for daily reset | practicing | 29 Jul 2026 | — | Task 7.4: used `new Date().toISOString().split("T")[0]` to get a clean YYYY-MM-DD date string for daily reset comparison. Compared saved date string to today's date string with `!==` to detect a new day. |
+| Daily auto-reset pattern | practicing | 29 Jul 2026 | — | Task 7.4: wrote the full daily reset block independently — todayString chain, savedDate comparison, forEach loop removing old checkbox keys, and saving today's date. Struggled slightly with the second part: initially placed `localStorage.setItem` outside the event listener and omitted the key argument — corrected both after guidance. |
+| Method chaining (.foo().bar().baz) | introduced | 29 Jul 2026 | — | Used `new Date().toISOString().split("T")[0]` — three operations chained: create Date, convert to ISO string, split at T and grab the date part. Correctly recalled that `split("T")` returns an array and `[0]` picks the first element. |
+| .toISOString() (converting Date to ISO format string) | introduced | 29 Jul 2026 | — | Used `.toISOString()` as part of the date chain to get `"2026-07-29T14:30:00.000Z"` format. Understood that `.split("T")[0]` then extracts just the date portion. |
+| .split() (splitting a string into an array) | introduced | 29 Jul 2026 | — | Used `"2026-07-29T14:30:00.000Z".split("T")` to split an ISO date string at the T separator. Correctly identified that the result is an array `["2026-07-29", "14:30:00.000Z"]` and that `[0]` selects the date part. |
 | Parsing JSON data | seed | — | — | — |
 | Structuring data for dynamic rendering | seed | — | — | — |
 
@@ -165,4 +170,4 @@ Statuses only upgrade on evidence of something I actually said or did.
 
 ---
 
-*Last updated: 28 July 2026 — Section 6 complete! (All 6 tasks done)*
+*Last updated: 29 July 2026 — Task 7.1 done (localStorage console exploration)*

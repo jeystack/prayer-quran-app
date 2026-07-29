@@ -113,6 +113,12 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 **What you do:** Save checkbox state when checked, load it when the page opens, reset automatically each new day.
 **Deliverable:** Check off prayers, close the browser, come back tomorrow — yesterday's checks are gone, today starts fresh.
 
+- [x] **7.1** Explore localStorage in the browser console — understand setItem, getItem, removeItem, and DevTools Storage tab
+- [x] **7.2** Save checkbox states to localStorage when the user checks or unchecks a prayer
+- [x] **7.3** Restore saved checkbox states when the page loads — make the checkmarks survive a page refresh
+- [x] **7.4** Add daily auto-reset — store today's date, detect a new day, clear yesterday's checks
+- [ ] **7.5** Final review and polish — test the full flow, update knowledge graph and file map
+
 ### Section 8: PWA Setup
 **What you learn:** What a PWA is, manifest.json, service workers, offline caching.
 **What you do:** Create the manifest (app name, icons, theme color), write a service worker that caches files for offline use.
@@ -125,4 +131,4 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 
 ---
 
-*Last updated: 28 July 2026 — Section 6 complete. Section 7 next (Daily Checklist with localStorage).*
+_Last updated: 29 July 2026 — Task 7.4 done. Section 7 in progress._
