@@ -219,3 +219,10 @@ document.getElementById("back-btn").addEventListener("click", function () {
   document.querySelector("#quran-reader ul").classList.remove("hidden");
   document.querySelector(".quran-reader-intro").classList.remove("hidden");
 });
+
+// --- Task 8.5: Register the service worker ---
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js").then(function () {
+    console.log("Service worker registered!");
+  });
+}

@@ -128,7 +128,7 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 - [x] **8.2** Create app icons — make the PNG icon files the manifest needs (192x192 and 512x512)
 - [x] **8.3** Create manifest.json — write the manifest with app name, icons, theme color, display mode, start URL
 - [x] **8.4** Write a service worker — create sw.js that caches all app files and serves them from cache offline
-- [ ] **8.5** Register the PWA — link manifest in HTML and register the service worker from main.js
+- [x] **8.5** Register the PWA — link manifest in HTML and register the service worker from main.js
 - [ ] **8.6** Test and verify — Lighthouse audit, offline mode testing, try installing to the home screen
 
 ### Section 9: Git Workflow & Deployment
@@ -138,4 +138,4 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 
 ---
 
-_Last updated: 29 July 2026 — Task 8.3 done. manifest.json created with name, icons, theme_color, background_color, display, and start_url. Next: Task 8.4 — service worker._
+_Last updated: 29 July 2026 — Task 8.5 done. Manifest linked in HTML, service worker registered from main.js. Next: Task 8.6 — test and verify with Lighthouse audit and offline mode._
