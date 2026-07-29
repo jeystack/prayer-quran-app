@@ -140,8 +140,8 @@ The app is built in 9 sections. Each section ends with a concrete deliverable yo
 - [x] **9.2** Set up GitHub Actions deployment — create a workflow file (`.github/workflows/deploy.yml`) that deploys the `app/` folder to GitHub Pages
 - [x] **9.3** Enable GitHub Pages — push the workflow, turn on Pages in repo settings, and see your app go live
 - [x] **9.4** Test the live app — open the public URL on desktop and phone, verify all three sections work, share the link
-- [ ] **9.5** Final review — write a meaningful commit message, update knowledge graph and file map
+- [x] **9.5** Final review — wrote a meaningful commit message, updated knowledge graph and file map
 
 ---
 
-_Last updated: 30 July 2026 — 9.3 complete (app live on GitHub Pages). Task 9.4 next: test the live app._
+_Last updated: 30 July 2026 — All 9 sections complete. Final commit: "From a little Idea to something that could help many muslims."_
