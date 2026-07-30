@@ -91,7 +91,7 @@ Every line of code is mine — no frameworks, no build tools, no copy-paste. The
 
 ## Demo
 
-_<video src="app/prayer-quran-app.MP4" controls width="300"></video>_
+_<video src="app/demo.mp4" controls width="300"></video>_
 
 ---
 
