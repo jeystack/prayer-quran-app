@@ -188,6 +188,25 @@ header h1 {
   margin-bottom: 4px;
 }
 
+.bismillah {
+  text-align: center;
+  margin-bottom: 20px; padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.bismillah-arabic {
+  font-family: "Amiri", serif;
+  line-height: 2;
+  direction: rtl;
+  font-size: 1.8rem;
+}
+
+.bismillah-english {
+  color: #666;
+  font-size: 0.95em;
+  font-style: italic;
+}
+
 #back-btn {
   background: none;
   border: 1px solid #2d6a4f;

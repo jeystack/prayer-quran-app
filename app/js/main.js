@@ -1,4 +1,3 @@
-// console.log("JS is live and running!");
 import * as adhan from "./adhan.esm.js";
 
 // --- Task 5.2: Calculate prayer times with Adhan.js ---
@@ -191,6 +190,14 @@ fetch("data/surah.json")
 
           // 5. Build the verses - loop through and show Arabic + English side by side
           let versesHTML = "";
+          if (arabic.verse.verse_0) {
+            versesHTML += '<div class="bismillah">';
+            versesHTML +=
+              '<p class="bismillah-arabic">' + arabic.verse.verse_0 + "</p>";
+            versesHTML +=
+              '<p class="bismillah-english">' + english.verse.verse_0 + "</p>";
+            versesHTML += "</div>";
+          }
           for (let i = 1; i <= arabic.count; i++) {
             versesHTML += '<div class="verse">';
             versesHTML += '<span class="verse-number">' + i + ".</span>";
