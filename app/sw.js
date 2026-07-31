@@ -18,6 +18,19 @@ self.addEventListener("install", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
+  // 1. Special logic for Page navigation - load, reload, bookmarks
+  if (event.request.mode === "navigate") {
+    event.respondWith(
+      caches.match(event.request).then((cachedResponse) => {
+        // If the exact URL is in the cache, use it.
+        // Otherwise, safely fall back to the cached relative index.html.
+        return cachedResponse || caches.match("index.html");
+      }),
+    );
+    return; // Terminate the handler for this request early
+  }
+
+  // 2. Existing logic for all other assets (CSS, JS, images, JSON data)
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       // Cache hit - return the cached version
