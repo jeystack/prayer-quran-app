@@ -190,14 +190,18 @@ fetch("data/surah.json")
 
           // 5. Build the verses - loop through and show Arabic + English side by side
           let versesHTML = "";
-          if (arabic.verse.verse_0) {
+
+          const arabicVerse = arabic.verse.verse_0;
+          const englishVerse = english.verse.verse_0;
+
+          if (arabicVerse && englishVerse) {
             versesHTML += '<div class="bismillah">';
+            versesHTML += '<p class="bismillah-arabic">' + arabicVerse + "</p>";
             versesHTML +=
-              '<p class="bismillah-arabic">' + arabic.verse.verse_0 + "</p>";
-            versesHTML +=
-              '<p class="bismillah-english">' + english.verse.verse_0 + "</p>";
+              '<p class="bismillah-english">' + englishVerse + "</p>";
             versesHTML += "</div>";
           }
+
           for (let i = 1; i <= arabic.count; i++) {
             versesHTML += '<div class="verse">';
             versesHTML += '<span class="verse-number">' + i + ".</span>";
