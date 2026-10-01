@@ -92,4 +92,4 @@ Every line of code is mine — no frameworks, no build tools, no copy-paste. The
 
 ---
 
-Built by [Jeremy Bilal Njumbe](https://github.com/jeystack) — from an idea to something that could help many muslims.
+Built by [Jeremy Njumbe](https://github.com/jeystack) — from an idea to something that could help many muslims.
