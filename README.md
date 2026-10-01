@@ -85,10 +85,15 @@ I built this in 9 sections over the course of a week, each section teaching me s
 8. **PWA Setup** — manifest, service worker, offline support
 9. **Deployment** — branching, GitHub Actions, live on GitHub Pages
 
-Every line of code is mine — no frameworks, no build tools, no copy-paste. The goal was understanding, not speed.
+## How I Worked – and How I Used AI
 
----
+I used Claude Code as a mentor in the role of a senior engineer. Together we broke the
+project into 9 sections with small, concrete tasks – the plan lives in [`learning/`](learning/).
+I then wrote the code for every task myself and used Claude as a sparring partner when
+I got stuck – asking for explanations and hints, not finished solutions.
+Claude also helped with documentation – those commits are marked as co-authored.
 
+No frameworks, no build tools. The goal was understanding, not speed.
 
 ---
 
