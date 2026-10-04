@@ -1,81 +1,78 @@
 # Project: Prayer & Qur'an PWA
 
-## Who I Am
+## Me
 
-- **Name:** Jeremy Bilal Njumbe
-- **Location:** Haltern am See, Germany
-- **Current situation:** IT retraining for Application Development (Software Developer)
-  - School: 24 June 2026 – 23 June 2028
-  - In class: 7:45 am – 3:15 pm, home by ~5 pm
-- **Background:** Learning HTML, CSS, Python — early stage, nothing sticking yet
-- **Interests:** AI, gaming (EA FC, NBA2K, GTA, CoD on PS5), soccer (training 2x/week, matches Sunday)
-- **Schedule constraints:** Free time evenings after 5 pm, minus soccer days. Need small, focused work sessions.
+- **Name:** Jeremy Njumbe
+- **Where:** Haltern am See, Germany
+- **What I'm doing:** IT retraining for Application Development (Software Developer)
+  - School runs 24 June 2026 to 23 June 2028
+- **Where I started:** learning HTML, CSS and Python, early stage, nothing sticking yet
 
-## The Project
+## What I'm building
 
-A **Progressive Web App (PWA)** — a prayer times and Qur'an reader that installs on your phone like a real app. No accounts, no payments, no login. Open it and use it.
+A **Progressive Web App (PWA)**: prayer times and a Qur'an reader that installs on my phone like a real app. No accounts, no payments, no login. Open it and use it.
 
-**Stack:** HTML + CSS + JavaScript (no frameworks, no libraries yet)
-**Hosting:** Free — GitHub Pages or Netlify (TBD)
+**Stack:** HTML + CSS + JavaScript. No frameworks. One library: Adhan.js for the prayer times.
+**Hosting:** GitHub Pages, free. Live at https://jeystack.github.io/prayer-quran-app/
 
-**Problem it solves:** Most good prayer/Qur'an apps cost money. This one is free, personal, and yours.
+**Why:** most good prayer and Qur'an apps cost money. This one is free, personal, and mine.
 
-## Core Engineering Components (the trunk)
+## The pieces I need to understand (the trunk)
 
-Every piece you need to understand and build to get this project live, end to end.
+Everything I have to understand and build to get this live, end to end.
 
-1. **Version Control (Git + GitHub)** — A system that saves every change you ever make to your code, so you can go back in time if something breaks. GitHub stores that history in the cloud so even if your laptop dies, your code is safe.
+1. **Version control (Git + GitHub).** Saves every change I make to my code, so I can go back in time if something breaks. GitHub keeps that history in the cloud, so if my laptop dies my code is safe.
 
-2. **HTML — The Structure** — Defines what's on the page: headings, buttons, checkboxes, text. The skeleton. If a webpage were a house, HTML would be the fundament, walls, stairs, and doors.
+2. **HTML, the structure.** What's on the page: headings, buttons, checkboxes, text. The skeleton. If a webpage is a house, HTML is the fundament, walls, stairs and doors.
 
-3. **CSS — The Design** — Makes things look good: colors, spacing, fonts, layout, responsiveness. The furniture, art, wall colors, and decoration on top of HTML's skeleton.
+3. **CSS, the design.** Makes it look good: colors, spacing, fonts, layout, responsiveness. The furniture, art, wall colors and decoration on top of the skeleton.
 
-4. **JavaScript — The Brain** — Makes things happen: when you tap a Surah it loads, when you check a box it saves. JavaScript is the electricity that makes the house come alive.
+4. **JavaScript, the brain.** Makes things happen: I tap a Surah and it loads, I check a box and it saves. The electricity that makes the house come alive.
 
-5. **Data — Where the Information Lives** — The actual content the app needs: prayer time formulas, the full Qur'an text with translations, the list of 114 Surahs. Comes from a free API (a service on the internet that hands you data when you ask) or from files included in your project.
+5. **Data, where the information lives.** The content the app needs: prayer time formulas, the full Qur'an text with translation, the list of 114 Surahs. I went with files inside the project, not an API.
 
-6. **LocalStorage — The App's Memory** — A built-in browser feature that lets the app save tiny pieces of info on the user's phone (like which prayers you checked off). Not a database — more like a sticky note the browser remembers.
+6. **localStorage, the app's memory.** A browser feature that saves tiny pieces of info on the phone, like which prayers I checked off. Not a database. More like a sticky note the browser remembers.
 
-7. **Deployment — Putting It on the Internet** — Taking the files on your laptop and putting them on a public website so anyone (including you on your phone) can access it. GitHub Pages or Netlify do this for free.
+7. **Deployment, putting it on the internet.** Taking the files on my laptop and putting them on a public website so anyone (including me on my phone) can open it.
 
 **The flow:**
 ```
-HTML + CSS + JavaScript → Data → LocalStorage → Git (save progress) → Deployment (live on internet)
+HTML + CSS + JavaScript → Data → localStorage → Git (save progress) → Deployment (live on internet)
 ```
 
-## MVP — In Scope
+## MVP: what's in
 
-These are the only features being built right now. Nothing else.
+Only these. Nothing else until they're done.
 
-1. **Prayer times for current location**
-   - Auto-detect location (browser geolocation API)
-   - Show all 5 daily prayers + Sunrise for Haltern am See
-   - Use a free prayer time calculation library (no API key needed)
-   - Show next prayer highlighted
+1. **Prayer times for where I am**
+   - Auto-detect location (browser geolocation API). *Still open: the app uses fixed coordinates for Haltern am See. Tasks 5.6 to 5.8 in plan.md.*
+   - All 5 daily prayers + Sunrise
+   - A free calculation library, no API key
+   - Next prayer highlighted
 
 2. **Daily prayer checklist**
    - 5 checkboxes (Fajr, Dhuhr, Asr, Maghrib, Isha)
-   - Saves state to localStorage (persists across sessions)
+   - Saved in localStorage, so it survives closing the app
    - Resets each day
 
 3. **Qur'an reader**
-   - List all 114 Surahs (name, number, Arabic name)
-   - Tap a Surah to read it — Arabic text + English translation
-   - Use free public Qur'an data (e.g., quran.com API or local JSON)
+   - All 114 Surahs listed (name, number, Arabic name)
+   - Tap a Surah to read it: Arabic text + English translation
+   - Free public Qur'an data, stored as local JSON
 
-4. **Mobile-friendly responsive layout**
-   - Looks good on phones (primary) and desktop (secondary)
-   - Clean, calm design — not cluttered
-   - One theme to start (no dark/light toggle yet)
+4. **Mobile-friendly layout**
+   - Phone first, desktop second
+   - Clean and calm, not cluttered
+   - One theme for now (no dark/light toggle)
 
 5. **PWA setup**
-   - manifest.json — app name, icons, theme color
-   - service worker — basic offline caching
-   - Installable to home screen on iPhone and Android
+   - manifest.json: app name, icons, theme color
+   - service worker: basic offline caching
+   - Installable to the home screen on iPhone and Android
 
-## Parking Lot — v2
+## Parking lot: v2
 
-Features deliberately excluded from MVP. Do not add these until v1 is live and used daily.
+Left out on purpose. I don't touch these until v1 is live and I use it daily.
 
 - Qibla direction / compass
 - Dark/light mode toggle
@@ -92,4 +89,4 @@ Features deliberately excluded from MVP. Do not add these until v1 is live and u
 
 ---
 
-*Last updated: 23 July 2026*
+*Last updated: 4 October 2026*

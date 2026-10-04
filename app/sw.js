@@ -1,4 +1,7 @@
-const CACHE_NAME = "prayer-quran-v3";
+// Release step: change this name (v4 -> v5 ...) every time a file in the
+// list below changes. The app is served cache-first, so without a new name
+// people who already installed it keep getting the old files.
+const CACHE_NAME = "prayer-quran-v4";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -8,8 +11,12 @@ self.addEventListener("install", (event) => {
         "css/styles.css",
         "js/main.js",
         "manifest.json",
+        "images/app-icon.svg",
         "images/app-icon-192x192.png",
         "images/app-icon-512x512.png",
+        "fonts/inter-latin.woff2",
+        "fonts/amiri-arabic.woff2",
+        "fonts/amiri-latin.woff2",
         "js/adhan.esm.js",
         "data/surah.json",
       ]);
@@ -40,8 +47,9 @@ self.addEventListener("fetch", (event) => {
 
       // Cache miss - fetch from network
       return fetch(event.request).then((networkResponse) => {
-        // Cache JSON data files for the future offline use
-        if (event.request.url.includes("data/")) {
+        // Cache JSON data files for the future offline use.
+        // Only successful responses - a "404 Not Found" must not be saved.
+        if (networkResponse.ok && event.request.url.includes("data/")) {
           const clone = networkResponse.clone();
           caches
             .open(CACHE_NAME)
