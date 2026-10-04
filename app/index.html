@@ -3,13 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prayer & Qur'an App</title>
+    <meta
+      name="description"
+      content="Daily prayer times, a prayer checklist and a Qur'an reader with all 114 Surahs in Arabic and English. Works offline."
+    />
+    <meta name="theme-color" content="#2d6a4f" />
+    <title>Prayer &amp; Qur'an App</title>
+    <link rel="icon" href="images/app-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="images/app-icon-192x192.png" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="manifest" href="manifest.json" />
   </head>
   <body>
     <header>
-      <h1>Prayer & Qur'an App</h1>
+      <h1>Prayer &amp; Qur'an App</h1>
     </header>
 
     <main>
@@ -17,24 +24,29 @@
         <h2>Prayer Times</h2>
         <p class="location">📍 Haltern am See</p>
 
+        <!-- data-prayer is the name Adhan.js uses for each time -->
         <div class="prayer-list">
-          <div class="prayer-item">
+          <div class="prayer-item card" data-prayer="fajr">
             <span class="prayer-name">Fajr</span>
             <span class="prayer-time">--:--</span>
           </div>
-          <div class="prayer-item">
+          <div class="prayer-item card sunrise-item" data-prayer="sunrise">
+            <span class="prayer-name">Sunrise</span>
+            <span class="prayer-time">--:--</span>
+          </div>
+          <div class="prayer-item card" data-prayer="dhuhr">
             <span class="prayer-name">Dhuhr</span>
             <span class="prayer-time">--:--</span>
           </div>
-          <div class="prayer-item">
+          <div class="prayer-item card" data-prayer="asr">
             <span class="prayer-name">Asr</span>
             <span class="prayer-time">--:--</span>
           </div>
-          <div class="prayer-item">
+          <div class="prayer-item card" data-prayer="maghrib">
             <span class="prayer-name">Maghrib</span>
             <span class="prayer-time">--:--</span>
           </div>
-          <div class="prayer-item">
+          <div class="prayer-item card" data-prayer="isha">
             <span class="prayer-name">Isha</span>
             <span class="prayer-time">--:--</span>
           </div>
@@ -47,23 +59,23 @@
         <p id="checklist-status">Prayed today? Check it off.</p>
 
         <div class="checklist">
-          <div class="checklist-item">
+          <div class="checklist-item card">
             <input type="checkbox" id="check-fajr" />
             <label for="check-fajr">Fajr</label>
           </div>
-          <div class="checklist-item">
+          <div class="checklist-item card">
             <input type="checkbox" id="check-dhuhr" />
             <label for="check-dhuhr">Dhuhr</label>
           </div>
-          <div class="checklist-item">
+          <div class="checklist-item card">
             <input type="checkbox" id="check-asr" />
             <label for="check-asr">Asr</label>
           </div>
-          <div class="checklist-item">
+          <div class="checklist-item card">
             <input type="checkbox" id="check-maghrib" />
             <label for="check-maghrib">Maghrib</label>
           </div>
-          <div class="checklist-item">
+          <div class="checklist-item card">
             <input type="checkbox" id="check-isha" />
             <label for="check-isha">Isha</label>
           </div>
@@ -72,13 +84,14 @@
 
       <section id="quran-reader">
         <h2>Qur'an Reader</h2>
-        <p class="quran-reader-intro">Browse Surahs. Tap one to read later</p>
+        <p class="quran-reader-intro">Tap a Surah to read it.</p>
 
-        <ul></ul>
+        <!-- The 114 Surahs are added here by main.js -->
+        <ul id="surah-list"></ul>
 
         <!-- This shows when you tap a Surah -->
         <div id="surah-detail" class="hidden">
-          <button id="back-btn">⬅ Back to Surahs</button>
+          <button id="back-btn" type="button">⬅ Back to Surahs</button>
           <h3 id="detail-title"></h3>
           <div id="detail-verses"></div>
         </div>

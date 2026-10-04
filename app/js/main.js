@@ -1,49 +1,78 @@
 import * as adhan from "./adhan.esm.js";
 
-// --- Task 5.2: Calculate prayer times with Adhan.js ---
+// ===== Prayer times =====
+
+// Haltern am See. Tasks 5.6-5.8 replace this with the browser's location.
 const coordinates = new adhan.Coordinates(51.74, 6.98);
-const date = new Date();
 const params = adhan.CalculationMethod.MuslimWorldLeague();
-const prayerTimes = new adhan.PrayerTimes(coordinates, date, params);
 
-console.log("Fajr:", prayerTimes.fajr);
-console.log("Sunrise:", prayerTimes.sunrise);
-console.log("Dhuhr:", prayerTimes.dhuhr);
-console.log("Asr:", prayerTimes.asr);
-console.log("Maghrib:", prayerTimes.maghrib);
-console.log("Isha:", prayerTimes.isha);
+const prayerItems = document.querySelectorAll(".prayer-item");
 
-// --- Task 4.2: Make the Fajr checkbox do something ---
+// Show a time as hours and minutes only, e.g. "05:43"
+function formatTime(time) {
+  return time.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+}
 
-// Step 1: Find the elements on the page
-// querySelector finds the FIRST element that matches the CSS selector you give it.
-// "#check-fajr" means: find the element with the id="check-fajr"
-const fajrCheckbox = document.querySelector("#check-fajr");
+function updatePrayerTimes() {
+  const now = new Date();
+  const prayerTimes = new adhan.PrayerTimes(coordinates, now, params);
+
+  // nextPrayer() answers with "fajr", "sunrise", "dhuhr", ... or "none"
+  let nextPrayerName = prayerTimes.nextPrayer(now);
+  let fajrTime = prayerTimes.fajr;
+
+  // After Isha there is no prayer left today, so the next one is
+  // tomorrow's Fajr.
+  if (nextPrayerName === "none") {
+    const tomorrow = new Date(now);
+    tomorrow.setDate(now.getDate() + 1);
+    fajrTime = new adhan.PrayerTimes(coordinates, tomorrow, params).fajr;
+    nextPrayerName = "fajr";
+  }
+
+  // Sunrise is not a prayer. Between Fajr and sunrise the next prayer is Dhuhr.
+  if (nextPrayerName === "sunrise") {
+    nextPrayerName = "dhuhr";
+  }
+
+  prayerItems.forEach(function (item) {
+    // data-prayer in the HTML matches the property names of prayerTimes
+    const name = item.dataset.prayer;
+    const timeSpan = item.querySelector(".prayer-time");
+
+    if (name === "fajr") {
+      timeSpan.textContent = formatTime(fajrTime);
+    } else {
+      timeSpan.textContent = formatTime(prayerTimes[name]);
+    }
+
+    // Highlight the next prayer and remove the highlight from the others
+    if (name === nextPrayerName) {
+      item.classList.add("next-prayer");
+    } else {
+      item.classList.remove("next-prayer");
+    }
+  });
+}
+
+// ===== Daily checklist =====
+
+const allCheckboxes = document.querySelectorAll(
+  ".checklist-item input[type='checkbox']",
+);
+const prayerCountDisplay = document.querySelector("#prayer-count");
 const statusMessage = document.querySelector("#checklist-status");
 
-// Step 2: Listen for changes on the checkbox
-// When the checkbox is checked or unchecked, run the function below.
-fajrCheckbox.addEventListener("change", function () {
-  // Step 3: Check if the box is checked or not
-  // .checked is true when the box has a checkmark, false when it doesn't.
-  if (fajrCheckbox.checked) {
-    statusMessage.textContent = "Alhamdulillah - Fajr prayed!";
-  } else {
-    statusMessage.textContent = "Prayed today? Check it off.";
-  }
-});
+// Today's date in the device's own time zone, e.g. "2026-10-04".
+// (toISOString() would give the UTC date, which changes one or two hours
+// after midnight in Germany.)
+function getTodayString() {
+  const now = new Date();
+  const month = String(now.getMonth() + 1).padStart(2, "0");
+  const day = String(now.getDate()).padStart(2, "0");
+  return now.getFullYear() + "-" + month + "-" + day;
+}
 
-// --- Task 4.3: Count how many checkboxes are checked — show "X of 5 prayers checked" at the top ---
-
-// Step 1: Find all the checkboxes at once
-// querySelectorAll returns a list of every match.
-const allCheckboxes = document.querySelectorAll("input[type='checkbox']");
-
-// Step 2: Find the count display element
-const prayerCountDisplay = document.querySelector("#prayer-count");
-
-// Step 3: Write a function that counts and displays
-// forEach runs the same code once for each item in a list.
 function updatePrayerCount() {
   let count = 0;
   allCheckboxes.forEach(function (box) {
@@ -51,189 +80,219 @@ function updatePrayerCount() {
       count = count + 1;
     }
   });
-  prayerCountDisplay.textContent = count + " of 5 prayers checked";
-}
 
-// --- Task 7.4: Daily auto-reset ---
-const todayString = new Date().toISOString().split("T")[0];
-const savedDate = localStorage.getItem("checklist-date");
-if (savedDate !== todayString) {
-  allCheckboxes.forEach(function (box) {
-    localStorage.removeItem(box.id);
-  });
-  localStorage.setItem("checklist-date", todayString);
-}
+  const total = allCheckboxes.length;
+  prayerCountDisplay.textContent = count + " of " + total + " prayers checked";
 
-// --- Task 7.3: Restore saved checkbox states when the page loads ---
-// On page load, read each checkbox's saved state from localStorage and apply it.
-allCheckboxes.forEach(function (box) {
-  const savedState = localStorage.getItem(box.id);
-
-  // If the saved value is the string "true", check the box.
-  // If nothing is saved (null), leave it unchecked - it already is.
-  if (savedState === "true") {
-    box.checked = true;
+  if (count === total) {
+    statusMessage.textContent = "Alhamdulillah - all prayers prayed today!";
+  } else {
+    statusMessage.textContent = "Prayed today? Check it off.";
   }
-});
+}
 
-// Step 4: Run it once on page load and listen for changes
-updatePrayerCount();
+// Read the saved checkbox states from localStorage and show them
+function loadChecklist() {
+  const today = getTodayString();
+
+  // A new day: throw away yesterday's checks
+  if (localStorage.getItem("checklist-date") !== today) {
+    allCheckboxes.forEach(function (box) {
+      localStorage.removeItem(box.id);
+    });
+    localStorage.setItem("checklist-date", today);
+  }
+
+  // localStorage only stores strings, so a checked box is saved as "true"
+  allCheckboxes.forEach(function (box) {
+    box.checked = localStorage.getItem(box.id) === "true";
+  });
+
+  updatePrayerCount();
+}
 
 allCheckboxes.forEach(function (box) {
-  box.addEventListener("change", updatePrayerCount);
-
-  // Use: localStorage.setItem(key, value)
   box.addEventListener("change", function () {
     localStorage.setItem(box.id, box.checked);
-    localStorage.setItem("checklist-date", todayString);
+    localStorage.setItem("checklist-date", getTodayString());
+    updatePrayerCount();
   });
 });
 
-const allPrayerTimes = document.querySelectorAll(".prayer-time");
+// ===== Keep prayer times and checklist up to date =====
 
-// --- Task 4.5: Tap a Surah and see its name ---
+// Everything that depends on the current time runs through this function,
+// so an app that stays open still moves the highlight and resets at midnight.
+function refresh() {
+  updatePrayerTimes();
+  loadChecklist();
+}
 
-// Step 1: Find all the Surah list items
-// (use querySelectorAll with the class you just added)
+refresh();
 
-// --- Task 5.3: Display real prayer times in the DOM ---
+// Once a minute while the app is open
+setInterval(refresh, 60 * 1000);
 
-// Loop through each prayer-time span and fill it with the calculated time
-allPrayerTimes.forEach(function (timeSpan) {
-  // Go up to the parent .prayer-item div
-  const parentDiv = timeSpan.parentElement;
-  // Find the .prayer-name span inside it
-  const prayerName = parentDiv.querySelector(".prayer-name").textContent;
-
-  // Match the name to the right time from Adhan.js
-  if (prayerName === "Fajr") {
-    timeSpan.textContent = prayerTimes.fajr.toLocaleTimeString();
-  } else if (prayerName === "Dhuhr") {
-    timeSpan.textContent = prayerTimes.dhuhr.toLocaleTimeString();
-  } else if (prayerName === "Asr") {
-    timeSpan.textContent = prayerTimes.asr.toLocaleTimeString();
-  } else if (prayerName === "Maghrib") {
-    timeSpan.textContent = prayerTimes.maghrib.toLocaleTimeString();
-  } else if (prayerName === "Isha") {
-    timeSpan.textContent = prayerTimes.isha.toLocaleTimeString();
+// And right away when the user comes back to the app
+document.addEventListener("visibilitychange", function () {
+  if (!document.hidden) {
+    refresh();
   }
 });
 
-console.log("Next prayer:", prayerTimes.nextPrayer());
+// ===== Qur'an reader =====
 
-// --- Task 5.4: Highlight the next upcoming prayer ---
+const quranReader = document.querySelector("#quran-reader");
+const readerIntro = document.querySelector(".quran-reader-intro");
+const surahList = document.querySelector("#surah-list");
+const surahDetail = document.querySelector("#surah-detail");
+const detailTitle = document.querySelector("#detail-title");
+const detailVerses = document.querySelector("#detail-verses");
+const backButton = document.querySelector("#back-btn");
 
-// Get the next prayer as a lowercase string (e.g. "fajr", "dhuhr")
-const nextPrayerName = prayerTimes.nextPrayer().toString().toLowerCase();
+// Where the page was scrolled to when a Surah was opened,
+// so the back button can return to the same spot in the list.
+let listScrollPosition = 0;
 
-// Loop through all prayer items and find the matching one
-document.querySelectorAll(".prayer-item").forEach(function (item) {
-  const name = item.querySelector(".prayer-name").textContent.toLowerCase();
-  if (name === nextPrayerName) {
-    item.classList.add("next-prayer");
-  }
-});
-
-// --- Task 6.2: Load Qur'an metadata with fetch() ---
-
-fetch("data/surah.json")
-  .then(function (response) {
+// fetch() does not treat "404 Not Found" as an error, so check response.ok
+function fetchJson(path) {
+  return fetch(path).then(function (response) {
+    if (!response.ok) {
+      throw new Error("Could not load " + path);
+    }
     return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
+  });
+}
 
-    // Find the empty <ul>
-    const surahList = document.querySelector("#quran-reader ul");
+// Create a <span> with a class and some text
+function createSpan(className, text) {
+  const span = document.createElement("span");
+  span.classList.add(className);
+  span.textContent = text;
+  return span;
+}
 
-    // Loop through all 114 Surahs
-    data.forEach(function (surah) {
-      // Create a new <li> element
-      const li = document.createElement("li");
-      // Give it the same class as before
-      li.classList.add("surah-item");
-      // Put the Surah's English name inside it
-      li.textContent = surah.title;
-      // Store the index on each element
-      li.dataset.index = surah.index;
-      // Add it to the <ul>
-      surahList.appendChild(li);
-    });
-    const allSurahItems = document.querySelectorAll(".surah-item");
-    const introText = document.querySelector(".quran-reader-intro");
+// Show a short message (loading, error) in the Surah detail view
+function showDetailMessage(text) {
+  const message = document.createElement("p");
+  message.classList.add("reader-message");
+  message.textContent = text;
+  detailVerses.replaceChildren(message);
+}
 
-    allSurahItems.forEach(function (readSurah) {
-      readSurah.addEventListener("click", function (event) {
-        // 1. Get the index from the clicked element
-        const index = event.target.dataset.index;
+// Build one row of the Surah list: number, names, and the Arabic name.
+// The row is a <button> so it also works with the keyboard.
+function createSurahItem(surah) {
+  const li = document.createElement("li");
+  const button = document.createElement("button");
+  button.type = "button";
+  button.classList.add("surah-item", "card");
 
-        // 2. Build the file paths - index "001" becomes "1" for the file name
-        const arabicPath = "data/surah/surah_" + parseInt(index) + ".json";
-        const englishPath =
-          "data/translation/en/en_translation_" + parseInt(index) + ".json";
+  // index "001" becomes the number 1
+  const number = parseInt(surah.index);
 
-        // 3. Fetch both files at the same time
-        Promise.all([
-          fetch(arabicPath).then(function (r) {
-            return r.json();
-          }),
-          fetch(englishPath).then(function (r) {
-            return r.json();
-          }),
-        ]).then(function (results) {
-          const arabic = results[0];
-          const english = results[1];
+  const names = document.createElement("span");
+  names.classList.add("surah-names");
+  names.appendChild(createSpan("surah-title", surah.title));
+  names.appendChild(
+    createSpan("surah-meta", surah.place + " · " + surah.count + " verses"),
+  );
 
-          // 4. Set the title
-          document.getElementById("detail-title").textContent =
-            event.target.textContent;
+  const arabicName = createSpan("surah-title-ar", surah.titleAr);
+  arabicName.lang = "ar";
 
-          // 5. Build the verses - loop through and show Arabic + English side by side
-          let versesHTML = "";
+  button.appendChild(createSpan("surah-number", number));
+  button.appendChild(names);
+  button.appendChild(arabicName);
 
-          const arabicVerse = arabic.verse.verse_0;
-          const englishVerse = english.verse.verse_0;
-
-          if (arabicVerse && englishVerse) {
-            versesHTML += '<div class="bismillah">';
-            versesHTML += '<p class="bismillah-arabic">' + arabicVerse + "</p>";
-            versesHTML +=
-              '<p class="bismillah-english">' + englishVerse + "</p>";
-            versesHTML += "</div>";
-          }
-
-          for (let i = 1; i <= arabic.count; i++) {
-            versesHTML += '<div class="verse">';
-            versesHTML += '<span class="verse-number">' + i + ".</span>";
-            versesHTML +=
-              '<p class="verse-arabic">' + arabic.verse["verse_" + i] + "</p>";
-            versesHTML +=
-              '<p class="verse-english">' +
-              english.verse["verse_" + i] +
-              "</p>";
-            versesHTML += "</div>";
-          }
-          document.getElementById("detail-verses").innerHTML = versesHTML;
-
-          // 6. Toggle visibility - hide list, show detail
-          document.querySelector("#quran-reader ul").classList.add("hidden");
-          document.querySelector(".quran-reader-intro").classList.add("hidden");
-          document.getElementById("surah-detail").classList.remove("hidden");
-        });
-      });
-    });
+  button.addEventListener("click", function () {
+    openSurah(surah);
   });
 
-// --- Back button: return to Surah list ---
-document.getElementById("back-btn").addEventListener("click", function () {
-  document.getElementById("surah-detail").classList.add("hidden");
-  document.querySelector("#quran-reader ul").classList.remove("hidden");
-  document.querySelector(".quran-reader-intro").classList.remove("hidden");
+  li.appendChild(button);
+  return li;
+}
+
+function renderVerses(arabic, english) {
+  let versesHTML = "";
+
+  // The Bismillah is stored as verse_0 (every Surah except 1 and 9).
+  // It is not a numbered verse, so it gets its own block.
+  const arabicBismillah = arabic.verse.verse_0;
+  const englishBismillah = english.verse.verse_0;
+
+  if (arabicBismillah && englishBismillah) {
+    versesHTML += '<div class="bismillah">';
+    versesHTML +=
+      '<p class="bismillah-arabic" lang="ar">' + arabicBismillah + "</p>";
+    versesHTML += '<p class="bismillah-english">' + englishBismillah + "</p>";
+    versesHTML += "</div>";
+  }
+
+  for (let i = 1; i <= arabic.count; i++) {
+    versesHTML += '<div class="verse">';
+    versesHTML += '<span class="verse-number">' + i + ".</span>";
+    versesHTML +=
+      '<p class="verse-arabic" lang="ar">' +
+      arabic.verse["verse_" + i] +
+      "</p>";
+    versesHTML +=
+      '<p class="verse-english">' + english.verse["verse_" + i] + "</p>";
+    versesHTML += "</div>";
+  }
+
+  detailVerses.innerHTML = versesHTML;
+}
+
+function openSurah(surah) {
+  const number = parseInt(surah.index);
+  const arabicPath = "data/surah/surah_" + number + ".json";
+  const englishPath = "data/translation/en/en_translation_" + number + ".json";
+
+  // Switch to the detail view right away and show it from the top
+  listScrollPosition = window.scrollY;
+  detailTitle.textContent = number + ". " + surah.title;
+  showDetailMessage("Loading...");
+  surahList.classList.add("hidden");
+  readerIntro.classList.add("hidden");
+  surahDetail.classList.remove("hidden");
+  quranReader.scrollIntoView();
+
+  // Fetch the Arabic text and the translation at the same time
+  Promise.all([fetchJson(arabicPath), fetchJson(englishPath)])
+    .then(function (results) {
+      renderVerses(results[0], results[1]);
+      // The page is much longer now, so jump to the start of the Surah again
+      quranReader.scrollIntoView();
+    })
+    .catch(function () {
+      showDetailMessage(
+        "This Surah could not be loaded. If you are offline, connect to the internet and try again.",
+      );
+    });
+}
+
+backButton.addEventListener("click", function () {
+  surahDetail.classList.add("hidden");
+  surahList.classList.remove("hidden");
+  readerIntro.classList.remove("hidden");
+  window.scrollTo(0, listScrollPosition);
 });
 
-// --- Task 8.5: Register the service worker ---
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js").then(function () {
-    console.log("Service worker registered!");
+// Load the list of all 114 Surahs
+fetchJson("data/surah.json")
+  .then(function (surahs) {
+    surahs.forEach(function (surah) {
+      surahList.appendChild(createSurahItem(surah));
+    });
+  })
+  .catch(function () {
+    readerIntro.textContent =
+      "The Surah list could not be loaded. Please reload the page.";
   });
+
+// ===== Service worker (offline support) =====
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js");
 }

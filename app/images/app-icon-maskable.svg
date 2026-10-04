@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+    <!-- Maskable version: the background fills the whole square and the
+         crescent stays inside the central safe zone, so Android can crop
+         the icon into any shape without cutting the moon off. -->
+    <rect width="512" height="512" fill="#2d6a4f" />
+    <g transform="translate(256 256) scale(0.9) translate(-158 -256)">
+        <path d="M 280 120
+             A 160 160 0 1 0 280 392
+             A 120 120 0 1 1 280 120 Z"
+            fill="white" />
+    </g>
+</svg>
