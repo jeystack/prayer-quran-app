@@ -1,0 +1,10 @@
+# Nomalize all text files to LF
+* text=auto eol=lf
+
+# Binary files: never touch them
+*.png binary
+*.jpg binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
