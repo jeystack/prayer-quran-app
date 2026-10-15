@@ -61,13 +61,16 @@ Things I'd add if I kept building (parking lot for v2):
 
 ## How to Run Locally
 
+The app uses ES modules and a service worker, so it has to be served over HTTP –
+opening `index.html` directly as a file does not work.
+
 ```bash
 git clone https://github.com/jeystack/prayer-quran-app.git
 cd prayer-quran-app/app
-open index.html
+python3 -m http.server 8000
 ```
 
-No server needed — it's all static files. For mobile testing, use VS Code's Live Server extension or any simple HTTP server.
+Then open <http://localhost:8000>. Alternatively, use VS Code's Live Server extension.
 
 ---
 
@@ -89,7 +92,16 @@ Every line of code is mine — no frameworks, no build tools, no copy-paste. The
 
 ---
 
+## How I Worked – and How I Used AI
+
+I used Claude Code as a mentor in the role of a senior engineer. Together we broke the
+project into 9 sections with small, concrete tasks – the plan lives in [`learning/`](learning/).
+I then wrote the code for every task myself and used Claude as a sparring partner when
+I got stuck – asking for explanations and hints, not finished solutions.
+Claude also helped me structure and polish the documentation.
+
+No frameworks, no build tools. The goal was understanding, not speed.
 
 ---
 
-Built by [Jeremy Njumbe](https://github.com/jeystack) — from an idea to something that could help many muslims.
+Built by [Jeremy Njumbe](https://github.com/jeystack) — from an idea to something that could help many Muslims.
