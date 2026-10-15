@@ -91,10 +91,10 @@ I used Claude Code as a mentor in the role of a senior engineer. Together we bro
 project into 9 sections with small, concrete tasks – the plan lives in [`learning/`](learning/).
 I then wrote the code for every task myself and used Claude as a sparring partner when
 I got stuck – asking for explanations and hints, not finished solutions.
-Claude also helped with documentation – those commits are marked as co-authored.
+Claude also helped me structure and polish the documentation.
 
 No frameworks, no build tools. The goal was understanding, not speed.
 
 ---
 
-Built by [Jeremy Njumbe](https://github.com/jeystack) — from an idea to something that could help many muslims.
+Built by [Jeremy Njumbe](https://github.com/jeystack) — from an idea to something that could help many Muslims.
