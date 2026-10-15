@@ -61,13 +61,16 @@ Things I'd add if I kept building (parking lot for v2):
 
 ## How to Run Locally
 
+The app uses ES modules and a service worker, so it has to be served over HTTP –
+opening `index.html` directly as a file does not work.
+
 ```bash
 git clone https://github.com/jeystack/prayer-quran-app.git
 cd prayer-quran-app/app
-open index.html
+python3 -m http.server 8000
 ```
 
-No server needed — it's all static files. For mobile testing, use VS Code's Live Server extension or any simple HTTP server.
+Then open <http://localhost:8000>. Alternatively, use VS Code's Live Server extension.
 
 ---
 
